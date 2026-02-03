@@ -383,4 +383,202 @@ public class Bootcamp{
         }
     }
 }
+*//*
+// Quick Sort:
+import java.util.Scanner;
+import java.util.Arrays;
+public class Bootcamp{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the size of the array : ");
+        int n = sc.nextInt();
+        System.out.println("Enter array elements : ");
+        int[] arr = new int[n];
+        for(int i = 0; i < n; i ++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println("Entered array : "+ Arrays.toString(arr));
+        quicksortrecursion(arr,0,n-1);
+        System.out.println("Sorted Array : "+Arrays.toString(arr));
+    }
+    public static int partition(int[] arr, int low,int high){
+        int pivot = arr[(low + high)/2];
+        while(low <= high){
+            while(arr[low] < pivot){
+                low++;
+            }
+            while(arr[high] > pivot){
+                high--;
+            }
+            if(low <= high){
+                int temp = arr[low];
+                arr[low] = arr[high];
+                arr[high] = temp;
+                low++;
+                high--;
+            }
+        }
+        return low;
+    }
+    public static void quicksortrecursion(int[] arr, int low, int high){
+        int pi = partition(arr,low,high);
+        if(low < pi-1){
+            quicksortrecursion(arr,low,pi-1);
+        }
+        if(high > pi){
+            quicksortrecursion(arr,pi,high);
+        }
+    }
+}
+*//*
+// Merge Sort : 
+import java.util.Scanner;
+import java.util.Arrays;
+public class Bootcamp{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the size of the array : ");
+        int n = sc.nextInt();
+        System.out.println("Enter array elements : ");
+        int[] arr = new int[n];
+        for(int i = 0; i < n; i ++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println("Entered array : "+ Arrays.toString(arr));
+        mergeSort(arr, 0, arr.length - 1);
+        System.out.println("Sorted array   : " + Arrays.toString(arr));
+    }
+    public static void mergeSort(int[] arr, int left, int right) {
+        if (left < right) {
+            int mid = left + (right - left) / 2;
+            mergeSort(arr, left, mid);
+            mergeSort(arr, mid + 1, right);
+            merge(arr, left, mid, right);
+        }
+    }
+    public static void merge(int[] arr, int left, int mid, int right) {
+        int n1 = mid - left + 1;
+        int n2 = right - mid;
+        int[] L = new int[n1];
+        int[] R = new int[n2];
+        for (int i = 0; i < n1; i++)
+            L[i] = arr[left + i];
+        for (int j = 0; j < n2; j++)
+            R[j] = arr[mid + 1 + j];
+        int i = 0, j = 0, k = left;
+        while (i < n1 && j < n2) {
+            if (L[i] <= R[j]) {
+                arr[k] = L[i];
+                i++;
+            } else {
+                arr[k] = R[j];
+                j++;
+            }
+            k++;
+        }
+        while (i < n1) {
+            arr[k] = L[i];
+            i++;
+            k++;        }
+
+        while (j < n2) {
+            arr[k] = R[j];
+            j++;
+            k++;
+        }
+    }
+}
+*//*
+// Radix Sort :
+import java.util.Scanner;
+import java.util.Arrays;
+public class Bootcamp{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter array size : ");
+        int n = sc.nextInt();
+        System.out.println("Enter array elements : ");
+        int[] arr = new int[n];
+        for(int i = 0 ; i<n;i++ ){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println("Entered array : "+Arrays.toString(arr));
+        radixsort(arr);
+        System.out.println("Sorted array : "+Arrays.toString(arr));     
+    }
+    public static void radixsort(int[] arr){
+        int n = arr.length;
+        int next;
+        for i : arr{
+            int next = arr[i]%10;
+        }
+    }
+}
+*//*
+//Stack :
+push : Adds an element to the end of the Stack
+pop : Remove an element from the top of the Stack
+isempty : Check is the stack is empty
+isFull : check if the stack is isFull
+peek : displays the top element of the stack
+Evaluation of postfix :
+> read all the symbols one by one from left to right in the given postfix expression
+> If the reading symbol is operand, then push it on to the stack
+> If the reading symbol is operand then perform two pop operations and store the two poped operands in two diff 
+variables. Then perform reading symbol operation using operand1 and operand2 and push the result back on to the stack.
+> Finally perform a pop operation and display the poped value as final result
+*//*
+import java.util.Scanner;
+import java.util.Stack;
+public class Bootcamp{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter postfix expression : ");
+        String postfix = sc.nextLine();
+        Stack<Integer> s = new Stack<>();
+        for(int i = 0; i < postfix.length();i++){
+            char ch = postfix.charAt(i);
+            if(Character.isDigit(ch)){
+                s.push(ch - '0');
+            }
+            else{
+                int operand2 = s.pop();
+                int operand1 = s.pop();
+                int result = 0;
+                switch(ch){
+                    case'+':result = operand1 + operand2;break;
+                    case'-':result = operand1 - operand2;break;
+                    case'*':result = operand1 * operand2;break;
+                    case'/':result = operand1 / operand2;break;
+                }
+                s.push(result);
+            }
+        }
+        System.out.println("Result = " + s.pop());
+    }
+}
 */
+import java.util.Scanner;
+import java.util.Stack;
+import java.util.Arrays;
+public class Bootcamp{
+    public static void main(String[] args){
+        int[] arr = new int[100];
+        int top = -1;
+        boolean isempty(){
+            return top == -1;
+        }
+        boolean isFull(){
+            return top == arr.length - 1;
+        }
+        void push(int data){
+            if(isFull()){
+                System.out.println("Stack is full");
+                return;
+            }
+            top++;
+            arr[top] = data;
+            System.out.println(data+" pushed to stack.");s
+        }
+    }
+}
