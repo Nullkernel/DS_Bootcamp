@@ -35,3 +35,9 @@ This means that the element inserted first will be removed first. It is analogou
 			 4. `deleteEmpty()`: Remove an element from the rear end.
 			 5. `peekFront()`: Get the front element.
 			 6. `peakRear()`: Get the rear element.
+
+**Example for simple/linear queue:**
+
+| (Front) |     |     |     |     | (Rear) |
+| ------- | --- | --- | --- | --- | ------ |
+| 5       | 10  | 15  | 20  | 25  | 30     |
