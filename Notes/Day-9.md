@@ -26,7 +26,7 @@ It is a type of linked list in which each node contains three fields: data, a re
 
 
 
-| (Start) | (Head)   |     | (Next) | --->     |     | (Next) | --->     |     | (Next) | --->     |     | (Next) | --->   |
+| (Start) | (Head)   |     | (`Next`) | --->     |     | (`Next`) | --->     |     | (`Next`) | --->     |     | (`Next`) | --->   |
 | ------- | -------- | --- | ------ | -------- | --- | ------ | -------- | --- | ------ | -------- | --- | ------ | ------ |
 | (Null)  |          | A   |        |          | B   |        |          | C   |        |          | D   |        | (Null) |
 | <---    | (`Prev`) |     | <---   | (`Prev`) |     | <---   | (`Prev`) |     | <---   | (`Prev`) |     | ---    | ---    |
