@@ -121,8 +121,8 @@ It is a simple and intuitive sorting algorithm that builds the sorted array one 
 
         System.out.print("After:  ");
         printArray(arr);
-    }
-}```
+    	}
+	}```
 
 # **Selection Sort:**
  It is a simple comparison-based sorting algorithm> It works by repeatedly by finding the minimum element from the unsorted part of the array and swapping it with the first element of the unsorted part.
@@ -186,5 +186,5 @@ It is a simple and intuitive sorting algorithm that builds the sorted array one 
 
         System.out.print("After:  ");
         printArray(arr);
-    }
-}```
+    	}
+	}```
