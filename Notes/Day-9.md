@@ -23,3 +23,10 @@ It is a type of linked list in which each node contains three fields: data, a re
 	2. Deletion: From the beginning, end or at any given position.
 	3. Traversal: Forward and backward traversal.
 	4. Search: Find an element by traversing the nodes.
+
+
+
+| (Start) | (Head)   |     | (Next) | --->     |     | (Next) | --->     |     | (Next) | --->     |     | (Next) | --->   |
+| ------- | -------- | --- | ------ | -------- | --- | ------ | -------- | --- | ------ | -------- | --- | ------ | ------ |
+| (Null)  |          | A   |        |          | B   |        |          | C   |        |          | D   |        | (Null) |
+| <---    | (`Prev`) |     | <---   | (`Prev`) |     | <---   | (`Prev`) |     | <---   | (`Prev`) |     | ---    | ---    |
