@@ -84,10 +84,11 @@ It is a simple and intuitive sorting algorithm that builds the sorted array one 
 	Insertion sort has a space complexity of O(1) because it is an in-place sorting algorithm.
 	
 4. **Code:**
-	`public class InsertionSort {`
+	```
+ 	public class InsertionSort {
 
-    `public static void insertionSort(int[] arr) {`
-        `int n = arr.length;`
+    public static void insertionSort(int[] arr) {
+        int n = arr.length;
 
         for (int i = 1; i < n; i++) {
             int key = arr[i];
@@ -103,25 +104,26 @@ It is a simple and intuitive sorting algorithm that builds the sorted array one 
         }
     }
 
-    `public static void printArray(int[] arr) {`
-        `for (int num : arr) {`
-            `System.out.print(num + " ");`
-        `}`
-        `System.out.println();`
-    `}`
+    public static void printArray(int[] arr) {
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
 
-    `public static void main(String[] args) {`
-        `int[] arr = {5, 3, 8, 4, 2};`
+    public static void main(String[] args) {
+        int[] arr = {5, 3, 8, 4, 2};
 
-        `System.out.print("Before: ");`
-        `printArray(arr);`
+        System.out.print("Before: ");
+        printArray(arr);
 
-        `insertionSort(arr);`
+        insertionSort(arr);
 
-        `System.out.print("After:  ");`
-        `printArray(arr);`
-    `}`
-`}`
+        System.out.print("After:  ");
+        printArray(arr);
+    }
+}```
+
 # **Selection Sort:**
  It is a simple comparison-based sorting algorithm> It works by repeatedly by finding the minimum element from the unsorted part of the array and swapping it with the first element of the unsorted part.
  
@@ -143,10 +145,11 @@ It is a simple and intuitive sorting algorithm that builds the sorted array one 
 	Selection sort has a space complexity of O(1) because it is an in-place sorting algorithm.
 	
 4. **Code:** 
-	`public class SelectionSort {`
+	```
+	public class SelectionSort {
 
-    `public static void selectionSort(int[] arr) {`
-        `int n = arr.length;`
+    public static void selectionSort(int[] arr) {
+        int n = arr.length;
 
         // One by one move boundary of unsorted subarray
         for (int i = 0; i < n - 1; i++) {
@@ -164,17 +167,17 @@ It is a simple and intuitive sorting algorithm that builds the sorted array one 
             arr[minIndex] = arr[i];
             arr[i] = temp;
         }
-    `}`
+    }
 
-    `public static void printArray(int[] arr) {`
-        `for (int num : arr) {`
-            `System.out.print(num + " ");`
-        `}`
-        `System.out.println();`
-    `}`
+    public static void printArray(int[] arr) {
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
 
-    `public static void main(String[] args) {`
-        `int[] arr = {64, 25, 12, 22, 11};`
+    public static void main(String[] args) {
+        int[] arr = {64, 25, 12, 22, 11};
 
         System.out.print("Before: ");
         printArray(arr);
@@ -183,5 +186,5 @@ It is a simple and intuitive sorting algorithm that builds the sorted array one 
 
         System.out.print("After:  ");
         printArray(arr);
-    `}`
-`}`
+    }
+}```
