@@ -23,10 +23,10 @@
 	Since it uses the principle of in place sorting, it requires zero extra space.
 	
 4.  **Code:**
-`public class BubbleSort {`
-    `public static void bubbleSort(int[] arr) {`
-        `int n = arr.length; // use .length (no parentheses)`
-        `boolean swapped;`
+`public class BubbleSort {
+    public static void bubbleSort(int[] arr) {
+        int n = arr.length; // use .length (no parentheses)
+        boolean swapped;`
 
         for (int i = 0; i < n - 1; i++) {
             swapped = false;
