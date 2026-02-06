@@ -1363,3 +1363,17 @@ public class DoubleLinkedList{
     }
 }
 */
+/*
+//Tree :
+A tree is a non-linear data structure that consists of nodes connected by edges. It is used to represent 
+hierarchial relationships between elements, such as organizational structures, file systems, or expression
+parsing.
+Types of Trees:
+> General Tree:
+> Binary Tree:
+    - Full binary tree
+    - Complete binar tree    
+    - Perfect binary tree:
+> Binary search tree:
+*/
+// Binary Tree:
