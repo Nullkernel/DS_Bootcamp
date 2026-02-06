@@ -16,11 +16,12 @@ The repository is organized into folders based on topic for better navigation an
 ## Data-Structures
 
 This directory contains implementations of fundamental data structures in Java, including:
-- Arrays
+- Linked Lists
 - Singly Linked Lists
 - Circular Linked Lists
 - Stacks
 - Queues
+- Biary Tree
 
 Each implementation focuses on:
 - Correct pointer manipulation
@@ -34,7 +35,9 @@ Each implementation focuses on:
 This directory includes Java implementations of common searching techniques:
 - Linear Search
 - Binary Search
-- Modified and variant binary search methods
+- Uniform Binary Swarch
+- Fibonacci Search
+- Interpolation Search
 
 The implementations demonstrate how different searching strategies behave under different conditions.
 
@@ -46,6 +49,10 @@ This directory contains Java implementations of basic sorting algorithms such as
 - Bubble Sort
 - Selection Sort
 - Insertion Sort
+- Quick Sort
+- Radix Sort
+- Merge Sort
+- Shell Sort
 
 These programs are written to clearly show algorithm flow and logic rather than micro-optimizations.
 
@@ -59,6 +66,7 @@ The notes explain:
 - Algorithm intuition
 - Important observations
 - Common mistakes and edge cases
+- Deatiled definitions
 
 ---
 
