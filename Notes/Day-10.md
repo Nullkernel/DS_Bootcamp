@@ -41,7 +41,6 @@
 		It represents the generation of a node if the root is at level 0, then its next child node is at level 1. It's to be carried out for a node.
 	10. **Keys:**
 		1. It represents a value of a node based on which a search operation is to be carried out for a node.
-
 2. **Types of Trees:**
 	These are three main types of trees:
 		1. **General Trees:**
