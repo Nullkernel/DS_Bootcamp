@@ -41,6 +41,7 @@
 		It represents the generation of a node if the root is at level 0, then its next child node is at level 1. It's to be carried out for a node.
 	10. **Keys:**
 		1. It represents a value of a node based on which a search operation is to be carried out for a node.
+
 2. **Types of Trees:**
 	These are three main types of trees:
 	1. **General Trees:**
@@ -53,11 +54,11 @@
 				It is a binary tree where all the leaf nodes must be on the same level. However, root and internal nodes in a complete binary tree can have 0, 						1 or 2 child nodes.
 			3. **Perfect Binary Tree:**
 				It is a binary tree where all the leaf node are on the same level and every node except leaf node has 2 children.
-`
+
 **In-order Traversal**: l, R, r
 **Pre-order Traversal**: R, l, r
 **Post-order Traversal**: l, r, R
 R -> Root
 l -> Left
 r -> Right
-`
+
