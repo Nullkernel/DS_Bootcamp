@@ -1,6 +1,3 @@
----
-
----
 **--followed from DSA notes--**
 
 # **Bubble Sort:**
