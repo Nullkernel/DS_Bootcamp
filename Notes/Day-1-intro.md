@@ -34,7 +34,7 @@ There are 2 major types of data structures, they are:
 - **Non - Linear data structure:**
 	- Here, elements are not arranged in a sequential manner. Instead they follow a hierarchical or interconnected structure, allowing for more complex relationships between data elements.
 	- Ex:
-		- **Tree**: A hierarchical structure consisting of nodes, with a single node and sub-nodes (children)
+		- **Tree**: A hierarchical structure consisting of nodes, with a single node and sub-nodes (children).
 		- **Graph**: A set of nodes connected by edges, used to represent networks.
 
 ```
