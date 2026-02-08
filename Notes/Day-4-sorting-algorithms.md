@@ -1,57 +1,72 @@
-**--followed from DSA notes--**
+# Bubble Sort:
 
-# **Bubble Sort:**
-	It is one of the simplest sorting algorithms. It works by repeatedly swapping the adjacent elements if they are in the wrong order. this process is repeated until the list is sorted.
-	
-1. **Algorithm Description:**
-	Given an array of n no. of elements, the algorithm performs the following steps:
-	
-	1) Compare each pair of adjacent elements.
-	2) if the current element is greater than the next element swap them.
-	3) After each pass, the largest is sorted or "Bubbles up".
-	4) it is repeated until the all elements are sorted.
-	
-2. **Time Complexity:**
-	1) Best Case: O(1) - array is already sorted.
-	2) Average Case: O(n^2).
-	3) Worst Case: O(n^2) - array is in reverse order.
-	
-3. **Space Complexity:**
-	Since it uses the principle of in place sorting, it requires zero extra space.
+**What it is?**
+Bubble Sort repeatedly scans the array and swaps adjacent elements that are in the wrong order. Each full pass pushes the largest remaining element to its correct position (“bubbles up”) at the end.
 
-# **Insertion Sort:**
-It is a simple and intuitive sorting algorithm that builds the sorted array one element at a time. it works by repeatedly taking the next element and inserting it into the correct position in the already sorted part of the array.
+**Algorithm (step-by-step):**  
+Given array `A[0..n-1]`:
+1. For `pass = 0` to `n-2`:
+2. For `i = 0` to `n-2-pass`:
+3. If `A[i] > A[i+1]` then swap `A[i]` and `A[i+1]`.
+4. Optionally stop early if a pass makes **no swaps** (optimization).
 
- 1. **Algorithm Description:**
-	1. Start from the second element (index 1), as the first element is considered as sorted.
-	2. Compare the current element with the elements in the sorted position. (to it's left).
-	3. Shift the current element with the elements in the sorted portion that are greater than the current element to the right by one position.
-	4. insert the current element to its current position.
-	
-2. **Time Complexity:**
-	1) Best Case: O(n) - array is already sorted.
-	2) Average Case: O(n^2).
-	3) Worst Case: O(n^2) - array is in reverse order.
-	
-3. **Space Complexity:**
-	Insertion sort has a space complexity of O(1) because it is an in-place sorting algorithm.
+**Time complexity:**
+- **Best case:** `O(n)` — array already sorted and early-exit optimization used (one pass to confirm).
+- **Average case:** `O(n^2)`.
+- **Worst case:** `O(n^2)` — array in reverse order.
 
-# **Selection Sort:**
- It is a simple comparison-based sorting algorithm> It works by repeatedly by finding the minimum element from the unsorted part of the array and swapping it with the first element of the unsorted part.
- 
-1. **Algorithm Description:**
-	1. Start from the **first element** of the array.
-	2. **Assume the current position has the smallest element**.
-	3. Compare this element with all remaining elements to the right.
-	4. If a **smaller element is found**, update the position of the minimum element.
-	5. After completing comparisons, **swap** the smallest element with the element at the current position.
-	6. Move to the **next position** and repeat the process.
-	7. Continue until the entire array is sorted.
-	
-2. **Time Complexity:**
-	1) Best Case: O(n^2).
-	2) Average Case: O(n^2).
-	3) Worst Case: O(n^2).
-	
-3. **Space Complexity:**
-	Selection sort has a space complexity of O(1) because it is an in-place sorting algorithm.
+**Space complexity:**
+- Auxiliary: `O(1)` — in-place.
+
+**Other notes:**
+- **Stable:** Yes (preserves relative order of equal elements). 
+- **When to use:** Mostly educational or for tiny arrays; simple and stable but inefficient on large datasets.
+---
+# Insertion Sort:
+
+**What it is?**  
+Insertion Sort builds a sorted section of the array one element at a time. For each element, it inserts that element into the correct place among elements already sorted to its left.
+
+**Algorithm (step-by-step):**  
+Given array `A[0..n-1]`:
+1. For `i = 1` to `n-1`:
+2. `key = A[i]`
+3. `j = i - 1`
+4. While `j >= 0` and `A[j] > key`: set `A[j+1] = A[j]` and `j = j - 1`.
+5. Set `A[j+1] = key`.
+
+**Time complexity:**
+- **Best case:** `O(n)` — array already sorted (only one comparison per element).
+- **Average case:** `O(n^2)`.
+- **Worst case:** `O(n^2)` — array reverse-sorted.
+
+**Space complexity:**
+- Auxiliary: `O(1)` — in-place.
+
+**Other notes:**
+- **Stable:** Yes.
+- **Adaptive:** Yes — performs much better on nearly-sorted inputs (useful in hybrid sorts like `Timsort`).
+- **When to use:** Small or nearly-sorted datasets; as the final pass in hybrid sorts.
+---
+# Selection Sort:
+
+**What it is?**  
+Selection Sort repeatedly selects the minimum element from the unsorted portion and swaps it into the next position of the sorted portion.
+
+**Algorithm (step-by-step):**  
+Given array `A[0..n-1]`:
+1. For `i = 0` to `n-2`:
+2. `minIndex = i`
+3. For `j = i+1` to `n-1`: if `A[j] < A[minIndex]` then `minIndex = j`.
+4. Swap `A[i]` and `A[minIndex]` (if `minIndex != i`).
+
+**Time complexity:**
+- **Best / Average / Worst:** `O(n^2)` — always scans remaining elements to find the minimum.
+
+**Space complexity:**
+- Auxiliary: `O(1)` — in-place.
+
+**Other notes:**
+- **Stable:** Not stable by default (swaps can change relative order of equal elements). Can be made stable with additional cost.
+- **Adaptive:** No — does not benefit from existing order.
+- **When to use:** Rare for large arrays; useful when the number of writes/swaps must be minimized (it does at most `n` swaps).
