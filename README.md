@@ -66,7 +66,7 @@ The notes explain:
 - Algorithm intuition
 - Important observations
 - Common mistakes and edge cases
-- Deatiled definitions
+- Day wise concepts
 
 ---
 
