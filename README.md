@@ -15,11 +15,7 @@ The repository is organized into folders based on topic for better navigation an
 - Binary Search Tree.
 - AVL Tree.
 - Graphs.
-  
-**Each implementation focuses on:**
-- Correct pointer manipulation.
-- Edge case handling.
-- Clear method structure.
+
 ## Searching-algorithms:
 **This directory includes Java implementations of common searching techniques:**
 - Linear Search.
@@ -46,7 +42,6 @@ These programs are written to clearly show algorithm flow and logic rather than 
 - Key concepts.
 - Algorithm intuition.
 - Important observations.
-- Common mistakes and edge cases.
 - Day wise concepts.
 ## Bootcamp.java / Bootcamp_1.java
 These files contain practice programs and examples used during learning sessions to test and reinforce concepts covered in the bootcamp.
