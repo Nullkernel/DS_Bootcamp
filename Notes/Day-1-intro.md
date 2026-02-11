@@ -4,8 +4,7 @@
 ## Data Type:
 It defines the kind of data a variable can hold and the operations that  can be performed on it.
 
-They are categorized into two types:
-
+- They are categorized into two types:
 	1. **Built-In data types:**
 		These are primitive data types that are directly supported by the programming language. Ex: `int` - Integer value, `char` - Single characters, `float` - Decimal value, `bool` - Boolean values, `String` - Sequence of characters. 
 	2. **Derived data types:**
