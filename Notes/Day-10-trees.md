@@ -20,7 +20,7 @@
 					(Sub-Tree)
 
 ---
-1. **Basic Terminology:**
+1. **Basic Terminologies:**
 	1. **Path:**
 		It refers to the sequence of nodes along the edges of a tree.
 	2. **Root:**
