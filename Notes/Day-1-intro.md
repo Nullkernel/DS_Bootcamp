@@ -1,5 +1,5 @@
 # Data:
-It refers to raw data facts, values or figures.
+**It refers to raw data facts, values or figures.**
 
 ## Data Type:
 It defines the kind of data a variable can hold and the operations that  can be performed on it.
