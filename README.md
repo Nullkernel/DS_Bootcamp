@@ -19,6 +19,10 @@ The repository is organized into folders based on topic for better navigation an
   - Adjacency List.
   - DFS algorithm.
   - BFS algorithm.
+  - Spanning Tree.
+  - Minimum Spanning Tree.
+  - Kruskal's algorithm.
+  - Prim's algorithm.
 
 ## Searching-algorithms:
 **This directory includes Java implementations of common searching techniques:**
