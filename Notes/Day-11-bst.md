@@ -6,7 +6,7 @@
     - All keys in the right subtree are strictly greater than the node's key.
 - This invariant lets each comparison discard about half of the remaining tree on average, making searches, insertions, and deletions faster than linear scans for well-balanced trees.
 
-## Example (visual):
+## Example:
 
 ```
             11
