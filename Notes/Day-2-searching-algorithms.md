@@ -2,7 +2,7 @@
 - It is a fundamental operation in computer science, that involves finding the presence or location of an element within a data structure, such as arrays or list. Efficient searching methods are essential for optimizing data retrieval and improving overall program performance.
 
 - Important Searching algorithms are:
-	- **Linear Search:**
+	- ## Linear Search:
 		- It is the simplest searching algorithm that checks every element in a list sequentially until it finds the target element or reaches the end of the list. It doesn't require the data to be sorted and works well on small or unsorted data.
 		
 		- **Problem**: Search for a given element (key) on an array using the linear search technique.
@@ -27,7 +27,7 @@
 		3. **Worst Case:** `O(n)`  :
 		    The element is **last** or **not present** in the list.
 		    
-	- **Binary Search:**
+	- ## Binary Search:
 		- **Definition:**  
 		    A divide-and-conquer search that repeatedly halves a **sorted** array by comparing the target with the middle element and discarding the half that cannot contain the target.
 		    
@@ -54,7 +54,7 @@
 	    2. **Average Case:** `O(log n)` - halves the search space each comparison.
 	    3. **Worst Case:** `O(log n)` - key absent or found after `log₂n` steps.
 	    
-	- **Uniform Binary Search (UBS):**
+	- ## Uniform Binary Search (UBS):
 		- **Definition:**  
 		    A variant of binary search that uses a precomputed table of “offsets” (probe distances) so each step uses additions/indexing rather than computing `mid = low + (high-low)/2`. It is an iterative, table-driven form of binary search often used to avoid division or variable mid computation.
 		    
@@ -81,7 +81,7 @@
 		    2. **Average Case:** `O(log n)` - probes reduce interval exponentially.
 		    3. **Worst Case:** `O(log n)`.
 		    
-	- **Interpolation Search:**
+	- ## Interpolation Search:
 		- **Definition:**  
 		    A search technique that estimates the position of the target by interpolating within the range of key values (like guessing where a name would fall in a phone book), rather than always probing the midpoint. Works best when keys are **uniformly distributed** and numeric.
 		    
@@ -108,7 +108,7 @@
 		    2. **Average Case:** `O(log log n)` - for uniformly distributed data.
 		    3. **Worst Case:** `O(n)` - for highly skewed distributions or pathological input (degenerates to linear behavior).
 		    
-	- **Fibonacci Search:**
+	- ## Fibonacci Search:
 		- **Definition:**  
 		    A search algorithm that uses Fibonacci numbers to divide the array into sections for probing. It chooses probe positions based on Fibonacci offsets instead of halving the interval; like binary search but uses additions/subtractions of Fibonacci numbers to compute indices.
 		    
@@ -137,7 +137,7 @@
 		    2. **Average Case:** `O(log n)`.
 		    3. **Worst Case:** `O(log n)`.
 
-**Asymptotic Analysis:**  
+## Asymptotic Analysis:
 As input size grows very large, it becomes impractical to measure an algorithm's exact running time in seconds or steps. Instead we use asymptotic analysis to describe the general trend of an algorithm's performance as input size approaches infinity.
 
 It focuses on dominant factors that influence growth, while ignoring constant multipliers and lower-order terms that have little effect on large inputs.

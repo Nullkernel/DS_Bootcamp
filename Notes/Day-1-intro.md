@@ -1,10 +1,10 @@
 # Data:
-It refers to raw data facts, values or figures.
+**It refers to raw data, facts, values or figures.**
 
 ## Data Type:
 It defines the kind of data a variable can hold and the operations that  can be performed on it.
 
-They are categorized into two types:
+- They are categorized into two types:
 	1. **Built-In data types:**
 		These are primitive data types that are directly supported by the programming language. Ex: `int` - Integer value, `char` - Single characters, `float` - Decimal value, `bool` - Boolean values, `String` - Sequence of characters. 
 	2. **Derived data types:**
@@ -14,7 +14,8 @@ It is is a way to organize, store and manage data, so that it can be used effici
 It defines:
 - How data can be stored in memory.
 - How you can access and manipulate it.
-**Basic operations that we can use to perform operations on data structures:** 
+
+**Basic operations that we can use to perform operations on data structures:**
 - **Traversal**: Accessing each element of the data structure.
 - **Searching**: Finding a specific element.
 - **Insertion**: Adding a new element.
