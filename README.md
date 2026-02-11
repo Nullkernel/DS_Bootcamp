@@ -44,9 +44,7 @@ These programs are written to clearly show algorithm flow and logic rather than 
 - Algorithm intuition.
 - Important observations.
 - Day wise concepts.
-## Bootcamp.java / Bootcamp_1.java
-These files contain practice programs and examples used during learning sessions to test and reinforce concepts covered in the bootcamp.
-
+  
 ---
 ## Technology Stack:
 - **Programming Language:** Java.
