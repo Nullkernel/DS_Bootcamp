@@ -21,6 +21,9 @@ The repository is organized into folders based on topic for better navigation an
 - Graphs :
   - Adjaceny Matrix.
   - Adjacency List.
+  - BFS algorithm.
+  - DFS algorithm.
+  - Dijkstra's algorithm.
 
 ## Searching-algorithms:
 **This directory includes Java implementations of common searching techniques:**
