@@ -1,8 +1,7 @@
 # AVL Tree Data Structure:
-An AVL tree defined as a self-balancing Binary Search Tree (BST), where the difference between heights of left and right subtrees for any node cannot be more than one.
-
-Balance Factor = left subtree height - right subtree height  
-For a Balanced Tree(for every node): -1 ≤ Balance Factor ≤ 1
+- An AVL tree defined as a self-balancing Binary Search Tree (BST), where the difference between heights of left and right subtrees for any node cannot be more than one.
+- Balance Factor = left subtree height - right subtree height  
+- For a Balanced Tree(for every node): -1 ≤ Balance Factor ≤ 1
 ## Example of an AVL Tree:
 The balance factors for different nodes are: 12 : +1, 8 : +1, 18 : +1, 5 : +1, 11 : 0, 17 : 0 and 4 : 0. Since all differences are lies between -1 to +1, so the tree is an AVL tree.
 
