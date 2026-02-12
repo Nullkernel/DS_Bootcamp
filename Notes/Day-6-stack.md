@@ -21,5 +21,5 @@
 	5. Syntax parsing in compilers.
 
 **Postfix Expression Evaluation:**
-`(2+3)*4`
+`(2+3)*4` `=>`
 `2 3 + 4 *`
