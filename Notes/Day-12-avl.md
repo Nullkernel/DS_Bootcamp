@@ -51,7 +51,7 @@ An AVL tree may rotate in one of the following four ways to keep itself balanced
 ## Insertion in an AVL Tree:
 AVL tree is a self-balancing Binary Search Tree (***BST***) where the difference between heights of left and right subtrees cannot be more than ***one*** for all nodes.
 
-**Insertion in an AVL Tree follows the same basic rules as in a Binary Search Tree (BST):**
+### Insertion in an AVL Tree follows the same basic rules as in a Binary Search Tree (BST):
 - A new key is placed in its correct position based on BST rules (left < node < right).
 - After the insertion, the ***balance factor*** of each node is checked during the path back up to the root. If any node becomes ***unbalanced*** (i.e., its balance factor becomes less than -1 or greater than +1), a ***rotation*** is required to restore the AVL property.
 - ![right_left_rotation_127.webp](https://media.geeksforgeeks.org/wp-content/uploads/20251209164929467359/right_left_rotation_127.webp)
