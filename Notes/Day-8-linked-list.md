@@ -1,5 +1,5 @@
 # Linked List:
-It is a linear data structure where each element (called a node) contains data and a reference (or pointer) to the next node in the sequence. Unlike arrays, linked list do not store elements memory locations, allowing efficient insertions and deletions.
+**It is a linear data structure where each element (called a node) contains data and a reference (or pointer) to the next node in the sequence. Unlike arrays, linked list do not store elements memory locations, allowing efficient insertions and deletions.**
 
 | (Head)   | (Next) |     |      |     |      |     |      |      |
 | -------- | ------ | --- | ---- | --- | ---- | --- | ---- | ---- |
