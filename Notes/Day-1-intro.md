@@ -23,16 +23,16 @@ It defines:
 - **Sorting**: Arranging elements in particular order.
 - **Merging**: Combining two or more data structures.
 
-**Types of data structures:**
+### Types of data structures:
 There are 2 major types of data structures, they are:
-- **Linear data structure:**
+- #### Linear data structure:
 	- Here, elements are arranged sequentially or linearly, where each element is connected to its previous and next elements. These structures are simple to implement and are often used when data needs to be processed in order.
 	- Ex:
 		- **Arrays:** Fixed size collection of similar data types.
 		- **Linked List:** A series of nodes where each node contains data and a pointer to the next node.
 		- **Stack:** Follows Last-In-First-Out (L.I.F.O) principle.
 		- **Queue:** Follows First-In-First-Out (F.I.F.O) principle.
-- **Non - Linear data structure:**
+- #### Non - Linear data structure:
 	- Here, elements are not arranged in a sequential manner. Instead they follow a hierarchical or interconnected structure, allowing for more complex relationships between data elements.
 	- Ex:
 		- **Tree**: A hierarchical structure consisting of nodes, with a single node and sub-nodes (children).
