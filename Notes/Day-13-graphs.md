@@ -1,7 +1,7 @@
 # Graphs:
 
 ## What is a graph?
-A **graph** is an abstract data type (ADT) that models a set of objects and the relationships (links) between them.
+***A **graph** is an abstract data type (ADT) that models a set of objects and the relationships (links) between them.***
 - The objects are called **vertices** (or nodes).
 - The links between vertices are called **edges**.  
     Formally, a graph is a pair **G=(V,E)**, where **V** is a set of vertices and **E** is a set of edges (each edge connects a pair of vertices).

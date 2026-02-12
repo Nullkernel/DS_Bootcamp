@@ -1,5 +1,5 @@
 # Trees:
-**A Tree is a non linear hierarchical data structure that consists of nodes connected by edges. It is used to represent hierarchical relationships between elements, such as organized structures, file systems, or expression parsing.**
+***A Tree is a non linear hierarchical data structure that consists of nodes connected by edges. It is used to represent hierarchical relationships between elements, such as organized structures, file systems, or expression parsing.***
 
 
 							  _____
@@ -20,7 +20,7 @@
 					(Sub-Tree)
 
 ---
-1. **Basic Terminologies:**
+1. ## Basic Terminologies:
 	1. **Path:**
 		It refers to the sequence of nodes along the edges of a tree.
 	2. **Root:**
@@ -42,18 +42,18 @@
 	10. **Keys:**
 		It represents a value of a node based on which a search operation is to be carried out for a node.
 
-2. **Types of Trees:**
-	These are three main types of trees:
-	1. **General Trees:**
+2. ## Types of Trees:
+	***These are three main types of trees:***
+	1. ### General Trees:
 		They are unordered tree data structures where the root node has minimum 0 or maximum n subtrees. The general trees have no constraint placed on their 				hierarchy. The root node thus acts like the superset of all the other subtrees.
-	2. **Binary Trees:**
+	2. ### Binary Trees:
 		They are general trees in which the root node can hold up to a maximum of 2 subtrees. Left subtree and right subtree. Based on the number of children, 				binary trees are divided into three types:
-		1. **Full Binary Tree:**
-				A full binary tree is a binary tree where every node has either 0 or 2 child nodes.
-		2. **Complete Binary Tree:**
-				It is a binary tree where all the leaf nodes must be on the same level. However, root and internal nodes in a complete binary tree can have 0, 						1 or 2 child nodes.
-		3. **Perfect Binary Tree:**
-				It is a binary tree where all the leaf node are on the same level and every node except leaf node has 2 children.
+		1. #### Full Binary Tree:
+			- A full binary tree is a binary tree where every node has either 0 or 2 child nodes.
+		2. #### Complete Binary Tree:
+			- It is a binary tree where all the leaf nodes must be on the same level. However, root and internal nodes in a complete binary tree can have 0, 						1 or 2 child nodes.
+		3. #### Perfect Binary Tree:
+			- It is a binary tree where all the leaf node are on the same level and every node except leaf node has 2 children.
 
 1. **In-order Traversal**: l, R, r
 2. **Pre-order Traversal**: R, l, r
