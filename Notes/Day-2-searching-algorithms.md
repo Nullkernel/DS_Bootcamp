@@ -1,7 +1,7 @@
 # Searching Techniques:
 - It is a fundamental operation in computer science, that involves finding the presence or location of an element within a data structure, such as arrays or list. Efficient searching methods are essential for optimizing data retrieval and improving overall program performance.
 
-- Important Searching algorithms are:
+- ### Important Searching algorithms are:
 	- ## Linear Search:
    		- ### Definition: 
 			It is the simplest searching algorithm that checks every element in a list sequentially until it finds the target element or reaches the end of the list. It doesn't require the data to be sorted and works well on small or unsorted data.
