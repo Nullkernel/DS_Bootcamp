@@ -6,19 +6,19 @@
    		- ### Definition: 
 			It is the simplest searching algorithm that checks every element in a list sequentially until it finds the target element or reaches the end of the list. It doesn't require the data to be sorted and works well on small or unsorted data.
 		
-		- **Problem**: Search for a given element (key) on an array using the linear search technique.
+		- **Problem**: Search for a given element (`key`) on an array using the linear search technique.
 		
 		- **Input**: An array `arr[]` of size n and a target element key.
 		
-		- **Output**: Index of the key is found, otherwise returns -1.
+		- **Output**: Index of the `key` is found, otherwise returns `-1`.
 		
 		- ### Algorithm Steps:
 			1. Start from the first element of the array.
 			2. Compare the current element with the target element key.
 			3. If the current element matches key, return the index.
 			4. If not, move to the next element.
-			5. Repeat steps 2 and 4 until the end of the array is reached.
-			6. If no match is found after traversing the entire array, return -1.
+			5. Repeat steps `2` and `4` until the end of the array is reached.
+			6. If no match is found after traversing the entire array, return `-1`.
 			
 		- ### Time Complexity:
 		1. **Best Case:** `O(1)`  :
@@ -32,7 +32,7 @@
 		- ### Definition:
 		    A divide-and-conquer search that repeatedly halves a **sorted** array by comparing the target with the middle element and discarding the half that cannot contain the target.
 		    
-		- **Problem:** Search for a given element (key) in a **sorted** array using binary search.
+		- **Problem:** Search for a given element (`key`) in a **sorted** array using binary search.
 		
 		- **Input:** A sorted array `arr[]` of size `n` and a target element `key`.
 		
@@ -150,15 +150,15 @@ It focuses on dominant factors that influence growth, while ignoring constant mu
 
 ### Types of Asymptotic Notations:
 
-Asymptotic notations provide a formal way to describe the growth rates of functions representing an algorithm’s time or space complexity. The main asymptotic notations are:
+#### Asymptotic notations provide a formal way to describe the growth rates of functions representing an algorithm’s time or space complexity. The main asymptotic notations are:
 
-- **Big-O Notation (O)** - Provides an upper bound on the growth rate. It describes the worst-case scenario: the algorithm’s running time will not exceed this bound for sufficiently large inputs.
+- **Big-O Notation `(O)`** - Provides an upper bound on the growth rate. It describes the worst-case scenario: the algorithm’s running time will not exceed this bound for sufficiently large inputs.
 
-- **Big-Ω (Omega) Notation (Ω)** - Provides a lower bound on the growth rate. It describes the best-case scenario: the running time will be at least this much for sufficiently large inputs.
+- **Big-Ω (Omega) Notation `(Ω)`** - Provides a lower bound on the growth rate. It describes the best-case scenario: the running time will be at least this much for sufficiently large inputs.
 
-- **Big-Θ (Theta) Notation (Θ)** - Provides a tight (both upper and lower) bound: the algorithm grows at this exact asymptotic rate (within constant factors).
+- **Big-Θ (Theta) Notation `(Θ)`** - Provides a tight (both upper and lower) bound: the algorithm grows at this exact asymptotic rate (within constant factors).
 
-- **little-o Notation (o)** - Describes a strict upper bound: `f(n) = o(g(n))` means f grows strictly slower than `g` (for any constant `c > 0`, eventually `f(n) < c·g(n)`).
+- **little-o Notation `(o)`** - Describes a strict upper bound: `f(n) = o(g(n))` means `f` grows strictly slower than `g` (for any constant `c > 0`, eventually `f(n) < c·g(n)`).
 
 ### Space Complexity:
 Space complexity refers to the amount of memory (space) an algorithm needs to run to completion. It includes all memory and its usage during execution, including variables, data structures, function calls, and temporary storage.
@@ -171,6 +171,6 @@ Space complexity refers to the amount of memory (space) an algorithm needs to ru
 4. **Input/Output data space** - Space required to store input and output data buffers.
 
 ### Common Space Complexities:
-1. **O(1)** - Constant space: the algorithm uses a fixed amount of extra memory regardless of input size.
-2. **O(n)** - Linear space: auxiliary memory used grows proportionally with input size.
-3. **O(n²)** - Quadratic space: used by algorithms that store 2D structures or pairwise data (e.g., some matrix or naive graph algorithms).
+1. **`O(1)`** - Constant space: the algorithm uses a fixed amount of extra memory regardless of input size.
+2. **`O(n)`** - Linear space: auxiliary memory used grows proportionally with input size.
+3. **`O(n²)`** - Quadratic space: used by algorithms that store `2D` structures or pairwise data (e.g., some matrix or naive graph algorithms).
