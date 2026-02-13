@@ -22,5 +22,5 @@
 
 **Postfix Expression Evaluation:**
 - ***Read each symbol in the provided postfix expression one at a time, from left to right. If the reading symbol is an operand, push it onto the stack. Otherwise, execute two pop operations and store the two popped operands in two different variables. Next, use operands 1 and 2 to perform a reading symbol action, then push the outcome back onto the stack. Lastly, do a pop operation, and show the popped value as the final result.***<br/>
-`Ex:` `(2+3)*4` `=>`
+- `Ex:` `(2+3)*4` `=>`
 `2 3 + 4 *`
