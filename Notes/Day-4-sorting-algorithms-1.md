@@ -23,7 +23,7 @@ Sorting is a fundamental topic in computer science that arranges the elements of
 
 ## Summary table (terms & meanings):
 - **Stable sort:** - Maintains the relative order of equal elements (i.e., equal keys keep their original order).
-- **In-place sort:** - Sorts using only a constant amount of extra space (O(1) auxiliary space).
+- **In-place sort:** - Sorts using only a constant amount of extra space (`O(1)` auxiliary space).
 - **Adaptive sort:** - Performs better when the input is already partially (or nearly) sorted.
 - **Comparison-based sort:** - Determines the order of elements by comparing pairs of elements (e.g., quick-sort, merge-sort, heap-sort).
 - **Non-comparison sort:** - Sorts by using element values (or parts of values) directly, without pairwise comparisons (e.g., counting sort, radix sort, bucket sort).
@@ -75,7 +75,7 @@ Given array `A[0..n-1]`:
 
 ### Other notes:
 - **Stable:** Yes.
-- **Adaptive:** Yes - performs much better on nearly-sorted inputs (useful in hybrid sorts like `Timsort`).
+- **Adaptive:** Yes - performs much better on nearly-sorted inputs (useful in hybrid sorts like Timsort).
 - **When to use:** Small or nearly-sorted datasets; as the final pass in hybrid sorts.
 ---
 # Selection Sort:
