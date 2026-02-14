@@ -4,6 +4,7 @@ It is designed to help understand core concepts through clean, readable, and beg
 The implementations prioritize simplicity and correctness over heavy optimization, making them suitable for learning, revision, and interview preparation.
 ## Repository Overview:
 The repository is organized into folders based on topic for better navigation and clarity.
+---
 ## Data-Structures:
 **This directory contains implementations of fundamental data structures in Java, including:**
 - Linked Lists:
