@@ -26,8 +26,6 @@ The repository is organized into folders based on topic for better navigation an
   - BFS algorithm.
   - DFS algorithm.
   - Dijkstra's algorithm.
-  - Kruskal's algorithm.
-  - Prim's algorithm.
 -  Hashtable
 
 ## Searching-algorithms:
