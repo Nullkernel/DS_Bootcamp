@@ -1,10 +1,11 @@
 import java.util.*;
-public class BFS{
-    static void addEdge(ArrayList<ArrayList<Integer>> adj, int i, int j){
+
+public class BFS {
+    static void addEdge(ArrayList<ArrayList<Integer>> adj, int i, int j) {
         adj.get(i).add(j);
         adj.get(j).add(i);
     }
-    static ArrayList<Integer> bfs(ArrayList<ArrayList<Integer>> adj){
+    static ArrayList<Integer> bfs(ArrayList<ArrayList<Integer>> adj) {
         int v = adj.size();
         boolean[] visited = new boolean[v];
         ArrayList<Integer> res = new ArrayList<>();
@@ -12,11 +13,11 @@ public class BFS{
         Queue<Integer> q = new LinkedList<>();
         visited[src] = true;
         q.add(src);
-        while(!q.isEmpty()){
+        while (!q.isEmpty()) {
             int curr = q.poll();
             res.add(curr);
-            for(int x : adj.get(curr)){
-                if(!visited[x]){
+            for (int x : adj.get(curr)) {
+                if (!visited[x]) {
                     visited[x] = true;
                     q.add(x);
                 }
@@ -24,10 +25,10 @@ public class BFS{
         }
         return res;
     }
-    public static void main(String[] args){
+    public static void main(String[] args) {
         int v = 5;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
-        for(int i = 0; i < v; i++){
+        for (int i = 0; i < v; i++) {
             adj.add(new ArrayList<>());
         }
         addEdge(adj, 1, 2);
