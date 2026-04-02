@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 class Node {
     int data;
     Node next;
@@ -53,7 +54,7 @@ class Singlylinkedlist {
     // ----- Delete from beginning -----
     public void deleteFromBeginning() {
         if (head == null) {
-            System.out.println("List is empty!");
+            System.out.println("List is Empty!");
             return;
         }
         head = head.next;
@@ -61,7 +62,7 @@ class Singlylinkedlist {
     // ----- Delete from eng -----
     public void deleteFromEnd() {
         if (head == null) {
-            System.out.println("List is empty!");
+            System.out.println("List is Empty!");
             return;
         }
         if (head.next == null) {
@@ -77,7 +78,7 @@ class Singlylinkedlist {
     // ----- IDelete from position -----
     public void deleteFromPosition(int position) {
         if (head == null) {
-            System.out.println("List is empty!");
+            System.out.println("List is Empty!");
             return;
         }
         if (position < 1) {
@@ -103,17 +104,17 @@ class Singlylinkedlist {
         int position = 1;
         while (temp != null) {
             if (temp.data == key) {
-                System.out.println("Element " + key + " found at position: " + position);
+                System.out.println("Element " + key + " Found at position: " + position);
                 return;
             }
             temp = temp.next;
             position++;
         }
-        System.out.println("Element " + key + " not found!");
+        System.out.println("Element " + key + " NOT Found!");
     }
     public void display() {
         if (head == null) {
-            System.out.println("List is empty!");
+            System.out.println("List is Empty!");
             return;
         }
         Node temp = head;
@@ -130,7 +131,7 @@ public class LinkedLists {
         Scanner sc = new Scanner(System.in);
         int choice, data, position;
         do {
-            System.out.println("\n----- Linked List Operations Menu -----");
+            System.out.println("\n---Linked List Operations Menu---");
             System.out.println("1. Insert at Beginning");
             System.out.println("2. Insert at End");
             System.out.println("3. Insert at Position");
@@ -144,17 +145,17 @@ public class LinkedLists {
             choice = sc.nextInt();
             switch (choice) {
                 case 1:
-                    System.out.print("Enter element to insert at beginning: ");
+                    System.out.print("Enter element to Insert at Beginning: ");
                     data = sc.nextInt();
                     list.insertAtBeginning(data);
                     break;
                 case 2:
-                    System.out.print("Enter element to insert at end: ");
+                    System.out.print("Enter element to Insert at End: ");
                     data = sc.nextInt();
                     list.insertAtEnd(data);
                     break;
                 case 3:
-                    System.out.print("Enter element to insert: ");
+                    System.out.print("Enter element to Insert: ");
                     data = sc.nextInt();
                     System.out.print("Enter the position: ");
                     position = sc.nextInt();
@@ -172,7 +173,7 @@ public class LinkedLists {
                     list.deleteFromPosition(position);
                     break;
                 case 7:
-                    System.out.print("Enter element to search: ");
+                    System.out.print("Enter element to Search: ");
                     data = sc.nextInt();
                     list.search(data);
                     break;
@@ -183,7 +184,7 @@ public class LinkedLists {
                     System.out.println("Exiting...");
                     break;
                 default:
-                    System.out.println("Invalid choice!!");
+                    System.out.println("Invalid choice!");
             }
         } while (choice != 9);
         sc.close();
