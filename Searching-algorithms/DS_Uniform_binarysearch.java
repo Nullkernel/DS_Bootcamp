@@ -23,10 +23,10 @@ public class DS_Uniform_binarysearch {
     }
     public static int binunisearch(int[] arr, int key) {
         int n = arr.length;
-        int k = (int)(Math.log(n)/Math.log(2));
+        int k = (int)(Math.log(n) / Math.log(2));
         System.out.println("n = " + n);
         System.out.println("k = " + k);
-        int[] offset = new int[k+1];
+        int[] offset = new int[k + 1];
         offset[0] = 1 << k;
         for (int i = 1; i <= k; i++) {
             offset[i] = offset[i-1] / 2;
