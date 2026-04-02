@@ -7,7 +7,6 @@ class Node {
         left = right = null;
     }
 }
-
 class binarytree {
     Node root = null;
     void inorder_traversal (Node node) {
@@ -41,11 +40,11 @@ public class BinaryTree {
         tree.root.left.left = new Node(44);
         tree.root.left.right = new Node(17);
         tree.root.right.left = new Node(56);
-        System.out.println("Inorder traversal : ");
+        System.out.println("Inorder traversal: ");
         tree.inorder_traversal(tree.root);
-        System.out.println("\nPreorder traversal : ");
+        System.out.println("\nPreorder traversal: ");
         tree.pre_order_traversal(tree.root);
-        System.out.println("\nPostorder traversal : ");
+        System.out.println("\nPostorder traversal: ");
         tree.post_order_traversal(tree.root);
     }
 }
