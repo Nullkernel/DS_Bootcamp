@@ -29,7 +29,7 @@ public class DS_Binarysearch {
             if (arr[mid] == key)
                 return mid;
             else if (key < arr[mid])
-                high = mid -1;
+                high = mid - 1;
             else
                 low = mid + 1;
         }
