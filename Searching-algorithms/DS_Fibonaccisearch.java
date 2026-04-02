@@ -21,7 +21,7 @@ public class DS_Fibonaccisearch {
             System.out.println("Element " + key + " was NOT Found in the entered Array.");
         }
     }
-    public static int fibonaccisearch(int[] arr,int key) {
+    public static int fibonaccisearch(int[] arr, int key) {
         int n = arr.length;
         int fnminus1 = 0;
         int fnminus2 = 1;
@@ -35,7 +35,7 @@ public class DS_Fibonaccisearch {
         }
         int offset = -1;
         while (fn > 1) {
-            int i = Math.min(offset + fnminus2 , n - 1);
+            int i = Math.min(offset + fnminus2, n - 1);
             if (arr[i] == key) {
                 return i;
             } else if (arr[i] < key) {
