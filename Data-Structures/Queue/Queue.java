@@ -15,7 +15,6 @@ class Queue {
 
     public void enqueue(int item) {
         if (isFull()) {
-            // Shift elements to the left if there is free space at the front
             if (front > 0) {
                 int j = 0;
                 for (int i = front; i <= rear; i++) {
@@ -64,7 +63,7 @@ class Queue {
             return;
         }
 
-        System.out.println("Queue elements:");
+        System.out.print("Queue elements: ");
         for (int i = front; i <= rear; i++) {
             System.out.print(arr[i] + " ");
         }
@@ -82,7 +81,7 @@ class Queue {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter Queue size:");
+        System.out.print("Enter Queue size: ");
         int capacity = sc.nextInt();
 
         Queue queue = new Queue(capacity);
