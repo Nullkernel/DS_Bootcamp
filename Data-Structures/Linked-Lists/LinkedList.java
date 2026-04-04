@@ -8,15 +8,15 @@ class Node {
         this.next = null;
     }
 }
-class Singlylinkedlist {
+class SinglyLinkedList {
     private Node head;
-    //----Insert At Beginning----
+    // ---- Insert At Beginning ----
     public void insertAtBeginning(int data) {
         Node newNode = new Node(data);
         newNode.next = head;
         head = newNode;
     }
-    //----Insert At End----
+    // ---- Insert At End ----
     public void insertAtEnd(int data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -29,7 +29,7 @@ class Singlylinkedlist {
         }
         temp.next = newNode;
     }
-    //----Insert At position----
+    // ---- Insert At position ----
     public void insertAtPosition(int data, int position) {
         if (position < 1) {
             System.out.println("Invalid position!");
@@ -51,7 +51,7 @@ class Singlylinkedlist {
         newNode.next = temp.next;
         temp.next = newNode;
     }
-    //----Delete From Beginning----
+    // ---- Delete From Beginning ----
     public void deleteFromBeginning() {
         if (head == null) {
             System.out.println("List is Empty!");
@@ -59,7 +59,7 @@ class Singlylinkedlist {
         }
         head = head.next;
     }
-    //----Delete From End----
+    // ---- Delete From End ----
     public void deleteFromEnd() {
         if (head == null) {
             System.out.println("List is Empty!");
@@ -75,7 +75,7 @@ class Singlylinkedlist {
         }
         temp.next = null;
     }
-    //----Delete From Position----
+    // ---- Delete From position ----
     public void deleteFromPosition(int position) {
         if (head == null) {
             System.out.println("List is Empty!");
@@ -125,13 +125,13 @@ class Singlylinkedlist {
         System.out.println("null");
     }
 }
-public class LinkedLists {
+public class LinkedList {
     public static void main(String[] args) {
-        Singlylinkedlist list = new Singlylinkedlist();
+        SinglyLinkedList list = new SinglyLinkedList();
         Scanner sc = new Scanner(System.in);
         int choice, data, position;
         do {
-            System.out.println("\n---Linked List Operations Menu---");
+            System.out.println("\n--- Linked List Operations Menu ---");
             System.out.println("1. Insert at Beginning");
             System.out.println("2. Insert at End");
             System.out.println("3. Insert at Position");

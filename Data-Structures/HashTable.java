@@ -1,48 +1,65 @@
 import java.util.Scanner;
 
-public class Hashtable {
+public class HashTable {
     static int size;
     static Dataitem[] hasharray;
+    static final Dataitem DELETED = new Dataitem(-1, -1);
+
     static class Dataitem {
         int data;
         int key;
+
         Dataitem(int data, int key) {
             this.data = data;
             this.key = key;
         }
     }
+
     static void initialise() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the size of the Hash Table: ");
+        System.out.print("Enter the size of the Hash Table: ");
         size = sc.nextInt();
         hasharray = new Dataitem[size];
     }
+
     static int hashcode(int key) {
-        return key % size;
+        return Math.floorMod(key, size);
     }
-    static void insert(int key,int data) {
+
+    static void insert(int key, int data) {
         Dataitem item = new Dataitem(data, key);
         int hashindex = hashcode(key);
-        while (hasharray[hashindex] != null && hasharray[hashindex].key != -1) {
+        int startIndex = hashindex;
+
+        while (hasharray[hashindex] != null && hasharray[hashindex] != DELETED) {
             hashindex = (hashindex + 1) % size;
+            if (hashindex == startIndex) {
+                System.out.println("Hash Table is full. Cannot Insert key: " + key);
+                return;
+            }
         }
         hasharray[hashindex] = item;
     }
+
     static Dataitem deleteitem(int key) {
         int hashindex = hashcode(key);
+        int startIndex = hashindex;
+
         while (hasharray[hashindex] != null) {
-            if (hasharray[hashindex].key == key) {
+            if (hasharray[hashindex] != DELETED && hasharray[hashindex].key == key) {
                 Dataitem temp = hasharray[hashindex];
-                hasharray[hashindex] = new Dataitem(-1, -1); 
+                hasharray[hashindex] = DELETED;
                 return temp;
             }
             hashindex = (hashindex + 1) % size;
+            if (hashindex == startIndex) break;
         }
         return null;
     }
+
     static void display() {
         for (int i = 0; i < size; i++) {
-            if (hasharray[i] != null && hasharray[i].key != -1) {
+            if (hasharray[i] != null && hasharray[i] != DELETED) {
                 System.out.println("Index " + i +
                         " -> Key: " + hasharray[i].key +
                         ", Data: " + hasharray[i].data);
@@ -51,20 +68,23 @@ public class Hashtable {
             }
         }
     }
+
     public static void main(String[] args) {
         initialise();
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number of Insertions: ");
+
+        System.out.print("Enter the number of Insertions: ");
         int n = sc.nextInt();
+
         for (int i = 0; i < n; i++) {
-            System.out.println("Enter the Index: ");
-            int index = sc.nextInt();
-            System.out.println("Enter the element: ");
+            System.out.print("Enter the key: ");
+            int key = sc.nextInt();
+            System.out.print("Enter the element: ");
             int element = sc.nextInt();
-            insert(index, element);
+            insert(key, element);
         }
+
         System.out.println("Insertion done!");
-        System.out.println();
         display();
     }
 }

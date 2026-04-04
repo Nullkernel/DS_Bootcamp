@@ -13,7 +13,7 @@ public class Main {
         Node root;
         int size;
         BST() {root = null; size = 0;}
-        //----Insert----
+        // ---- Insert ----
         public void insert(int key) {
             Node n = new Node(key);
             if (root == null) {
@@ -33,7 +33,7 @@ public class Main {
             else parent.right = n;
             size++;
         }
-       //----Delete----
+       // ---- Delete ----
        public void delete(int key) {
             Node cur = root;
             Node parent = null;
@@ -65,26 +65,25 @@ public class Main {
             }
             size--;
         }
-        //----Insert (Recursive)----
+        // ---- Insert (Recursive) ----
         /*
         public void insert(int key) {
             root = insertRec(root, key);
         }
         private Node insertRec(Node node, int key) {
-            if (node == null){
+            if (node == null) {
                 size++;
                 return new Node(key);
             }
-            if (key < node.data){
+            if (key < node.data) {
                 node.left = insertRec(node.left, key);
-            }
-            else if (key > node.data){
+            } else if (key > node.data) {
                 node.right = insertRec(node.right, key);
             }
             return node;
         }
         */
-        //----Delete (Recursive)----
+        //---- Delete (Recursive) ----
         /*
         public void delete(int key) {
             root = deleteRec(root, key);
@@ -116,7 +115,7 @@ public class Main {
             return node;
         }
         */
-        //----Search----
+        // ---- Search ----
         public boolean contains(int key) {
             return searchNode(key) != null;
         }
@@ -128,28 +127,28 @@ public class Main {
             }
             return null;
         }
-        //----Inorder----
+        // ---- Inorder ----
         public void inorder(Node node) {
             if (node == null) return;
             inorder(node.left);
             System.out.print(node.data + " ");
             inorder(node.right);
         }
-        //----Preorder----
+        // ---- Preorder ----
         public void preorder(Node node) {
             if (node == null) return;
             System.out.print(node.data + " ");
             preorder(node.left);
             preorder(node.right);
         }
-        //----Postorder----
+        // ---- Postorder ----
         public void postorder(Node node) {
             if (node == null) return;
             postorder(node.left);
             postorder(node.right);
             System.out.print(node.data + " ");
         }
-        //----Level Order----
+        // ---- Level Order ----
         public List<Integer> levelOrder() {
             List<Integer> res = new ArrayList<>();
             if (root == null) return res;
@@ -163,21 +162,21 @@ public class Main {
             }
             return res;
         }
-        //----Min----
+        // ---- Min ----
         public Integer findMin() {
             if (root == null) return null;
             Node cur = root;
             while (cur.left != null) cur = cur.left;
             return cur.data;
         }
-        //----Max----
+        // ---- Max ----
         public Integer findMax() {
             if (root == null) return null;
             Node cur = root;
             while (cur.right != null) cur = cur.right;
             return cur.data;
         }
-        //----Successor----
+        // ---- Successor ----
         public Integer successor(int key) {
             Node node = searchNode(key);
             if (node == null) return null;
@@ -197,7 +196,7 @@ public class Main {
                 return succ;
             }
         }
-        //----Predecessor----
+        // ---- Predecessor ----
         public Integer predecessor(int key) {
             Node node = searchNode(key);
             if (node == null) return null;
@@ -216,16 +215,16 @@ public class Main {
                 return pred;
             }
         }
-        //----Clear----
+        // ---- Clear ----
         public void clear() {
             root = null;
             size = 0;
         }
-        //----Size----
+        // ---- Size ----
         public int size() {
             return size;
         }
-        //----Height----
+        // ---- Height ----
         public int height() {
             return heightRec(root);
         }
@@ -233,7 +232,7 @@ public class Main {
             if (node == null) return -1; 
             return 1 + Math.max(heightRec(node.left), heightRec(node.right));
         }
-        //----Is Empty?----
+        // ---- Is Empty? ----
         public boolean isEmpty() {
             return size == 0;
         }
@@ -243,7 +242,7 @@ public class Main {
         BST tree = new BST();
         int choice;
         do {
-            System.out.println("\n---Binary Search Tree Operations Menu---");
+            System.out.println("\n--- Binary Search Tree Operations Menu ---");
             System.out.println("1. Insert");
             System.out.println("2. Delete");
             System.out.println("3. Search");
@@ -297,7 +296,7 @@ public class Main {
                     System.out.println(tree.levelOrder());
                     break;
                 case 8:
-                    System.out.println("Minimun element: ");
+                    System.out.println("Minimum element: ");
                     System.out.println(tree.findMin());
                     break;
                 case 9:
@@ -305,10 +304,12 @@ public class Main {
                     System.out.println(tree.findMax());
                     break;
                 case 10:
+                    System.out.println("Enter the element: ");
                     int v10 = sc.nextInt();
                     System.out.println(tree.successor(v10));
                     break;
                 case 11:
+                    System.out.println("Enter the element: ");
                     int v11 = sc.nextInt();
                     System.out.println(tree.predecessor(v11));
                     break;
