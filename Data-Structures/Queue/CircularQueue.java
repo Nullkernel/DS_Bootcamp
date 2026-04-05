@@ -78,11 +78,30 @@ class Queue {
 }
 
 public class CircularQueue {
+    private static int readInt(Scanner sc, String prompt) {
+        while (true) {
+            System.out.print(prompt);
+            if (sc.hasNextInt()) {
+                return sc.nextInt();
+            }
+            System.out.println("Invalid input. Please enter an integer.");
+            sc.next();
+        }
+    }
+
+    private static int readPositiveInt(Scanner sc, String prompt) {
+        while (true) {
+            int value = readInt(sc, prompt);
+            if (value > 0) {
+                return value;
+            }
+            System.out.println("Invalid input. Please enter an integer greater than 0.");
+        }
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter Queue size: ");
-        int capacity = sc.nextInt();
+        int capacity = readPositiveInt(sc, "Enter Queue size: ");
 
         Queue queue = new Queue(capacity);
         int choice;
@@ -96,14 +115,11 @@ public class CircularQueue {
             System.out.println("5. Is Full?");
             System.out.println("6. Is Empty?");
             System.out.println("7. Exit");
-            System.out.print("Enter your choice: ");
-
-            choice = sc.nextInt();
+            choice = readInt(sc, "Enter your choice: ");
 
             switch (choice) {
                 case 1:
-                    System.out.print("Enter element to Enqueue: ");
-                    int element = sc.nextInt();
+                    int element = readInt(sc, "Enter element to Enqueue: ");
                     queue.enqueue(element);
                     break;
 
@@ -132,7 +148,7 @@ public class CircularQueue {
                     break;
 
                 default:
-                    System.out.println("Invalid choice!");
+                    System.out.println("Invalid choice. Please enter a valid menu option.");
             }
         } while (choice != 7);
 

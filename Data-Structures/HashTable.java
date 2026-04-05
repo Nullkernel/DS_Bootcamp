@@ -4,6 +4,7 @@ public class HashTable {
     static int size;
     static Dataitem[] hasharray;
     static final Dataitem DELETED = new Dataitem(-1, -1);
+    private static final String INVALID_INT_MESSAGE = "Invalid input. Please enter an integer.";
 
     static class Dataitem {
         int data;
@@ -15,11 +16,30 @@ public class HashTable {
         }
     }
 
-    static void initialise() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the size of the Hash Table: ");
-        size = sc.nextInt();
+    static void initialise(Scanner sc) {
+        size = readPositiveInt(sc, "Enter the size of the Hash Table: ");
         hasharray = new Dataitem[size];
+    }
+
+    static int readInt(Scanner sc, String prompt) {
+        while (true) {
+            System.out.print(prompt);
+            if (sc.hasNextInt()) {
+                return sc.nextInt();
+            }
+            System.out.println(INVALID_INT_MESSAGE);
+            sc.next();
+        }
+    }
+
+    static int readPositiveInt(Scanner sc, String prompt) {
+        while (true) {
+            int value = readInt(sc, prompt);
+            if (value > 0) {
+                return value;
+            }
+            System.out.println("Invalid input. Please enter an integer greater than 0.");
+        }
     }
 
     static int hashcode(int key) {
@@ -70,21 +90,19 @@ public class HashTable {
     }
 
     public static void main(String[] args) {
-        initialise();
         Scanner sc = new Scanner(System.in);
+        initialise(sc);
 
-        System.out.print("Enter the number of Insertions: ");
-        int n = sc.nextInt();
+        int n = readPositiveInt(sc, "Enter the number of Insertions: ");
 
         for (int i = 0; i < n; i++) {
-            System.out.print("Enter the key: ");
-            int key = sc.nextInt();
-            System.out.print("Enter the element: ");
-            int element = sc.nextInt();
+            int key = readInt(sc, "Enter the key: ");
+            int element = readInt(sc, "Enter the element: ");
             insert(key, element);
         }
 
         System.out.println("Insertion done!");
         display();
+        sc.close();
     }
 }
