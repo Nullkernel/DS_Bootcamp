@@ -34,14 +34,8 @@ for i in "${!java_files[@]}"; do
   err_file="$tmp_dir/err/$i.log"
   mkdir -p "$work_dir" "$out_dir" "$(dirname "$err_file")"
 
-  class_name="$(sed -nE 's/^[[:space:]]*public[[:space:]]+(class|interface|enum)[[:space:]]+([A-Za-z_][A-Za-z0-9_]*).*/\2/p' "$file" | head -n 1)"
-
-  if [[ -n "$class_name" ]]; then
-    compile_target="$work_dir/${class_name}.java"
-  else
-    compile_target="$work_dir/$(basename "$file")"
-  fi
-
+  compile_target="$work_dir/$file"
+  mkdir -p "$(dirname "$compile_target")"
   cp "$file" "$compile_target"
 
   if javac -d "$out_dir" "$compile_target" > /dev/null 2>"$err_file"; then
