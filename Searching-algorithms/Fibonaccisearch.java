@@ -20,7 +20,7 @@ public class Fibonaccisearch {
         System.out.println("Enter the key element to be Found: ");
         int key = sc.nextInt();
 
-        int result = fibonacciSearch(arr, key);
+        int result = fibonaccisearch(arr, key);
         if (result != -1) {
             System.out.println("Element " + key + " Found at Index: " + result);
         } else {
@@ -30,38 +30,38 @@ public class Fibonaccisearch {
         sc.close();
     }
 
-    public static int fibonacciSearch(int[] arr, int key) {
+    public static int fibonaccisearch(int[] arr, int key) {
         int n = arr.length;
-        int fibMm2 = 0; // (m-2)th Fibonacci number
-        int fibMm1 = 1; // (m-1)th Fibonacci number
-        int fibM = fibMm1 + fibMm2; // mth Fibonacci number
+        int fnminus2 = 0;
+        int fnminus1 = 1;
+        int fn = fnminus1 + fnminus2;
 
-        while (fibM < n) {
-            fibMm2 = fibMm1;
-            fibMm1 = fibM;
-            fibM = fibMm1 + fibMm2;
+        while (fn < n) {
+            fnminus2 = fnminus1;
+            fnminus1 = fn;
+            fn = fnminus1 + fnminus2;
         }
 
         int offset = -1;
 
-        while (fibM > 1) {
-            int i = Math.min(offset + fibMm2, n - 1);
+        while (fn > 1) {
+            int i = Math.min(offset + fnminus2, n - 1);
 
             if (arr[i] < key) {
-                fibM = fibMm1;
-                fibMm1 = fibMm2;
-                fibMm2 = fibM - fibMm1;
+                fn = fnminus1;
+                fnminus1 = fnminus2;
+                fnminus2 = fn - fnminus1;
                 offset = i;
             } else if (arr[i] > key) {
-                fibM = fibMm2;
-                fibMm1 = fibMm1 - fibMm2;
-                fibMm2 = fibM - fibMm1;
+                fn = fnminus2;
+                fnminus1 = fnminus1 - fnminus2;
+                fnminus2 = fn - fnminus1;
             } else {
                 return i;
             }
         }
 
-        if (fibMm1 == 1 && offset + 1 < n && arr[offset + 1] == key) {
+        if (fnminus1 == 1 && offset + 1 < n && arr[offset + 1] == key) {
             return offset + 1;
         }
 
