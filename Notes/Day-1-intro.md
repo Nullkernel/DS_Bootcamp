@@ -10,7 +10,7 @@ It defines the kind of data a variable can hold and the operations that  can be 
 	2. ## Derived data types:
 		These are the data type that are constructed using one or more built-in types and operators. They are typically used to model more complex data structures and are often language independent in concept. Ex: Arrays, List, Stack, Queue, Trees, etc. These structures are fundamentals for organizing and manipulating collections.
 ## Data Structures:
-It is is a way to organize, store and manage data, so that it can be used efficiently in a computer program.
+It is a way to organize, store, and manage data, so that it can be used efficiently in a computer program.
 It defines:
 - How data can be stored in memory.
 - How you can access and manipulate it.
