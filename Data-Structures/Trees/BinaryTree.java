@@ -9,7 +9,7 @@ class Node {
     }
 }
 
-class BinaryTree {
+class BinaryTreeStructure {
     Node root = null;
 
     void inorder_traversal(Node node) {
@@ -37,9 +37,9 @@ class BinaryTree {
     }
 }
 
-public class Main {
+public class BinaryTree {
     public static void main(String[] args) {
-        BinaryTree tree = new BinaryTree();
+        BinaryTreeStructure tree = new BinaryTreeStructure();
         tree.root = new Node(27);
         tree.root.left = new Node(12);
         tree.root.right = new Node(3);

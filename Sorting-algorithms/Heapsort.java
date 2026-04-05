@@ -1,6 +1,6 @@
 import java.util.Scanner;
 import java.util.Arrays;
-public class DS_HeapSort {
+public class Heapsort {
     public void sort(int arr[]) {
       int n = arr.length;
       for (int i = n / 2 - 1; i >= 0; i--) {
@@ -38,7 +38,7 @@ public class DS_HeapSort {
         arr[i] = sc.nextInt();
       }
       System.out.println("Original array : "+ Arrays.toString(arr));
-      DS_HeapSort hs = new DS_HeapSort();
+      Heapsort hs = new Heapsort();
       hs.sort(arr);
       System.out.println("Sorted array:"+ Arrays.toString(arr));
       }

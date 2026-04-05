@@ -1,7 +1,7 @@
 //Radix sort:
 import java.util.Scanner;
 import java.util.Arrays;
-public class DS_Radixsort {
+public class Radixsort {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter array size : ");

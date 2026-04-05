@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Main {
+public class BinarySearchTree {
     static class Node {
         int data;
         Node left, right;

@@ -1,7 +1,7 @@
 // Bubble Sort :
 import java.util.Scanner;
 import java.util.Arrays;
-public class DS_Bubblesort{
+public class Bubblesort{
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the array size : ");

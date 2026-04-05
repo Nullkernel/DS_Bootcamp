@@ -1,6 +1,6 @@
 import java.util.Scanner;
 import java.util.Arrays;
-public class QuickSort {
+public class Quicksort_Lomuto {
     private static int partition(int[] array, int low, int high) {
         int pivot = array[high]; 
         int i = low - 1; 

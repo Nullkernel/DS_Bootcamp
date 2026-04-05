@@ -1,7 +1,7 @@
 // Insertion sort :
 import java.util.Scanner;
 import java.util.Arrays;
-public class DS_Insertionsort{
+public class Insertionsort{
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the array size : ");
