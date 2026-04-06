@@ -111,7 +111,3 @@ The hash function used for multiplication method is: h(k) = floor ( n (K A % 1) 
 4. Take the floor value
 
 ---
-
-## Collision
-
-
