@@ -23,10 +23,10 @@ There are many hash functions that use numeric or alphanumeric keys. Different h
     <img width="530" height="244" alt="image" src="https://github.com/user-attachments/assets/57bf9d14-bd95-4cc0-b16a-cef3de540345" />
 
 - **Mid square method:**
-    Example:
-    K = 50
-    k*8 k = 2500
-    h(k) = 50
+    Example:\n
+    K = 50\n
+    k*8 k = 2500\n
+    h(k) = 50\n
     The hash value obtained is 50
 - Folding method
 - Multiplication method
