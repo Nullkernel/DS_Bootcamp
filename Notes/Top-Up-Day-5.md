@@ -41,12 +41,9 @@ Uses modulo operation:
 ```
 h(k) = k % m
 ```
-
 Where:
-
 * `k` = key
 * `m` = size of hash table
-
 ---
 
 ### Mid-Square Method
@@ -55,7 +52,6 @@ Where:
 Square the key and extract the middle digits.
 
 **Example:**
-
 ```
 k = 50
 k² = 2500
@@ -63,7 +59,6 @@ Middle digits → 50
 
 h(k) = 50
 ```
-
 ---
 
 ### Folding Method
@@ -107,6 +102,7 @@ Where:
 * `A` = constant (0 < A < 1), commonly `0.618`
 
 **Concept:**
+
 The hash function used for multiplication method is: h(k) = floor ( n (K A % 1) ). Here, k is the key and A can be any constant value between 0 and 1. Both K and A are multiplied and their fractional part is seperated. This is then multiplied with n to get the hash value.
 
 1. Multiply key `k` with constant `A`
