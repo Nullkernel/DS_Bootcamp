@@ -32,9 +32,9 @@ This means that the element inserted first will be removed first. It is analogou
 			 1. **`insertFront(element)`:** Add an element to the front end.
 			 2. **`insertRear(element)`:** Add an element to the rear end.
 			 3. **`deleteFront()`:** Remove an element from the front end.
-			 4. **`deleteEmpty()`:** Remove an element from the rear end.
+			 4. **`deleteRear()`:** Remove an element from the rear end.
 			 5. **`peekFront()`:** Get the front element.
-			 6. **`peakRear()`:** Get the rear element.
+			 6. **`peekRear()`:** Get the rear element.
 
 **Example for simple/linear queue:**
 
