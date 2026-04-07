@@ -56,7 +56,13 @@ public class Interpolationsearch {
                     return lo;
                 return -1;
             }
-            pos = lo + ((hi - lo) * (x - arr[lo])) / (arr[hi] - arr[lo]);
+            long numerator = (long) (hi - lo) * (x - arr[lo]);
+            long denominator = (long) (arr[hi] - arr[lo]);
+            long posLong = lo + (numerator / denominator);
+            if (posLong < lo || posLong > hi) {
+                return -1;
+            }
+            pos = (int) posLong;
             if (arr[pos] == x)
                 return pos;
             if (arr[pos] < x)
