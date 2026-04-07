@@ -21,7 +21,21 @@ public class Dijkstra {
         adj.get(u).add(new int[]{v, w});
     }
 
+    /**
+     * Computes shortest paths from {@code src} with Dijkstra's algorithm.
+     *
+     * <p>Precondition: all edge weights in {@code adj} must be non-negative.
+     */
     static long[] dijkstra(ArrayList<ArrayList<int[]>> adj, int src) {
+        for (ArrayList<int[]> edges : adj) {
+            for (int[] edge : edges) {
+                int w = edge[1];
+                if (w < 0) {
+                    throw new IllegalArgumentException("Dijkstra requires non-negative edge weights");
+                }
+            }
+        }
+
         int n = adj.size();
         long[] dist = new long[n];
         Arrays.fill(dist, Long.MAX_VALUE);
