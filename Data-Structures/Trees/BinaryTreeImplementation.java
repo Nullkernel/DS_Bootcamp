@@ -2,7 +2,7 @@
 // Delete handles all cases explicitly:
 // 1) leaf node, 2) node with one child, 3) node with two children.
 public class BinaryTreeImplementation {
-    static class Node {
+    private static class Node {
         int data;
         Node left;
         Node right;

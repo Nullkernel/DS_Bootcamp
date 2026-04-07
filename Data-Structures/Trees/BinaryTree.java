@@ -1,18 +1,27 @@
 // Manual tree traversal demo:
 // This example builds a tree by wiring nodes manually and prints DFS traversals.
-class TraversalNode {
-    int data;
-    TraversalNode left;
-    TraversalNode right;
-
-    TraversalNode(int key) {
-        data = key;
-        left = right = null;
-    }
-}
-
 class ManualTraversalTree {
+    private static class TraversalNode {
+        int data;
+        TraversalNode left;
+        TraversalNode right;
+
+        TraversalNode(int key) {
+            data = key;
+            left = right = null;
+        }
+    }
+
     TraversalNode root = null;
+
+    void buildSampleTree() {
+        root = new TraversalNode(27);
+        root.left = new TraversalNode(12);
+        root.right = new TraversalNode(3);
+        root.left.left = new TraversalNode(44);
+        root.left.right = new TraversalNode(17);
+        root.right.left = new TraversalNode(56);
+    }
 
     void inorderTraversal(TraversalNode node) {
         if (node != null) {
@@ -44,12 +53,7 @@ public class BinaryTree {
         ManualTraversalTree tree = new ManualTraversalTree();
 
         // Manually building a sample tree for traversal demonstration.
-        tree.root = new TraversalNode(27);
-        tree.root.left = new TraversalNode(12);
-        tree.root.right = new TraversalNode(3);
-        tree.root.left.left = new TraversalNode(44);
-        tree.root.left.right = new TraversalNode(17);
-        tree.root.right.left = new TraversalNode(56);
+        tree.buildSampleTree();
 
         System.out.println("Inorder traversal:");
         tree.inorderTraversal(tree.root);
