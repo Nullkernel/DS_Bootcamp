@@ -27,6 +27,11 @@ public class Radixsort {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
+        if (containsNegative(arr)) {
+            System.out.println("This radix sort version supports non-negative integers only");
+            sc.close();
+            return;
+        }
         System.out.println("Entered array : " + Arrays.toString(arr));
         radixsort(arr);
         System.out.println("Sorted array : " + Arrays.toString(arr));
@@ -49,6 +54,14 @@ public class Radixsort {
             }
         }
         return max;
+    }
+    public static boolean containsNegative(int[] arr) {
+        for (int value : arr) {
+            if (value < 0) {
+                return true;
+            }
+        }
+        return false;
     }
     public static void countSort(int[] arr, int exp) {
         int n = arr.length;
