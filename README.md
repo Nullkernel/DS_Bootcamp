@@ -20,6 +20,11 @@ The repository is organized into folders based on topic for better navigation an
   - Binary Tree.
   - Binary Search Tree.
   - AVL Tree.
+  - Tries:
+      - Suffix Trie
+      - Suffix Array
+      - Prefix Trie
+      - Prefix Array
 - Graphs :
   - Adjacency Matrix.
   - Adjacency List.
