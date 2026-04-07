@@ -8,6 +8,7 @@ The implementations prioritize simplicity and correctness over heavy optimizatio
 The repository is organized into folders based on topic for better navigation and clarity.
 ## Data-Structures:
 **This directory contains implementations of fundamental data structures in Java, including:**
+
 - `Data-Structures/Linked-Lists/LinkedList.java` — Singly Linked List.
 - `Data-Structures/Linked-Lists/CircularLinkedLists.java` — Circular Linked List.
 - `Data-Structures/Linked-Lists/DoubleLinkedList.java` — Doubly Linked List.
@@ -31,6 +32,7 @@ The repository is organized into folders based on topic for better navigation an
 - `Data-Structures/Trees/Trie/Trie.java` — Trie.
 - `Data-Structures/Trees/Trie/PrefixTrie.java` — Prefix Trie.
 - `Data-Structures/Trees/Trie/SuffixTrie.java` — Suffix Trie.
+
 
 ## Searching-algorithms:
 **This directory includes Java implementations of common searching techniques:**

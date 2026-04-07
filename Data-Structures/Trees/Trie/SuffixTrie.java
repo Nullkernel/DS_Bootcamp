@@ -1,26 +1,51 @@
 import java.util.*;
+class SuffixNode {
+    SuffixNode[] children = new SuffixNode[26];
+    boolean isEnd;
+    SuffixNode() {
+        isEnd = false;
+    }
+}
 public class SuffixTrie {
+    SuffixNode root;
+    public SuffixTrie() {
+        root = new SuffixNode();
+    }
+    public void insert(String word) {
+        SuffixNode curr = root;
+        for (char ch : word.toCharArray()) {
+            int index = ch - 'a';
+            if (curr.children[index] == null) {
+                curr.children[index] = new SuffixNode();
+            }
+            curr = curr.children[index];
+        }
+        curr.isEnd = true;
+    }
+    public void buildSuffixTrie(String text) {
+        for (int i = 0; i < text.length(); i++) {
+            insert(text.substring(i));
+        }
+    }
+    public boolean search(String pattern) {
+        SuffixNode curr = root;
+        for (char ch : pattern.toCharArray()) {
+            int index = ch - 'a';
+            if (curr.children[index] == null) {
+                return false;
+            }
+            curr = curr.children[index];
+        }
+        return true;
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the String: ");
-        String word = sc.nextLine();
-        int n = word.length();
-        String[] arr1 = new String[n];
-        String[] arr2;
-        ArrayList<Integer> suffix_array = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            arr1[i] = word.substring(i);
-        }
-        arr2 = arr1.clone();
-        Arrays.sort(arr1);
-        for (String s : arr1) {
-            for (int i = 0; i < n; i++) {
-                if (arr2[i].equals(s)) {
-                    suffix_array.add(i);
-                    break;
-                }
-            }
-        }
-        System.out.println("Suffix Array: " + suffix_array);
+        SuffixTrie trie = new SuffixTrie();
+        System.out.print("Enter a string: ");
+        String text = sc.nextLine();
+        trie.buildSuffixTrie(text);
+        System.out.print("Enter substring to search: ");
+        String pattern = sc.nextLine();
+        System.out.println("Substring exists: " + trie.search(pattern));
     }
 }
