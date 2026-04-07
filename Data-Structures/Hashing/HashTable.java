@@ -1,10 +1,7 @@
-import java.util.Scanner;
-
 public class HashTable {
     static int size;
     static Dataitem[] hasharray;
     static final Dataitem DELETED = new Dataitem(-1, -1);
-    private static final String INVALID_INT_MESSAGE = "Invalid input. Please enter an integer.";
 
     static class Dataitem {
         int data;
@@ -16,30 +13,9 @@ public class HashTable {
         }
     }
 
-    static void initialise(Scanner sc) {
-        size = readPositiveInt(sc, "Enter the size of the Hash Table: ");
+    static void initialise(int tableSize) {
+        size = tableSize;
         hasharray = new Dataitem[size];
-    }
-
-    static int readInt(Scanner sc, String prompt) {
-        while (true) {
-            System.out.print(prompt);
-            if (sc.hasNextInt()) {
-                return sc.nextInt();
-            }
-            System.out.println(INVALID_INT_MESSAGE);
-            sc.next();
-        }
-    }
-
-    static int readPositiveInt(Scanner sc, String prompt) {
-        while (true) {
-            int value = readInt(sc, prompt);
-            if (value > 0) {
-                return value;
-            }
-            System.out.println("Invalid input. Please enter an integer greater than 0.");
-        }
     }
 
     static int hashcode(int key) {
@@ -47,18 +23,50 @@ public class HashTable {
     }
 
     static void insert(int key, int data) {
-        Dataitem item = new Dataitem(data, key);
         int hashindex = hashcode(key);
         int startIndex = hashindex;
+        int firstDeletedIndex = -1;
 
-        while (hasharray[hashindex] != null && hasharray[hashindex] != DELETED) {
+        while (hasharray[hashindex] != null) {
+            if (hasharray[hashindex] == DELETED) {
+                if (firstDeletedIndex == -1) {
+                    firstDeletedIndex = hashindex;
+                }
+            } else if (hasharray[hashindex].key == key) {
+                hasharray[hashindex].data = data;
+                System.out.println("Updated key " + key + " with new data: " + data);
+                return;
+            }
             hashindex = (hashindex + 1) % size;
             if (hashindex == startIndex) {
                 System.out.println("Hash Table is full. Cannot Insert key: " + key);
                 return;
             }
         }
-        hasharray[hashindex] = item;
+
+        if (firstDeletedIndex != -1) {
+            hashindex = firstDeletedIndex;
+        }
+        hasharray[hashindex] = new Dataitem(data, key);
+        System.out.println("Inserted key " + key + " with data: " + data);
+    }
+
+    static Dataitem search(int key) {
+        int hashindex = hashcode(key);
+        int startIndex = hashindex;
+
+        while (hasharray[hashindex] != null) {
+            if (hasharray[hashindex] != DELETED && hasharray[hashindex].key == key) {
+                System.out.println("Found key " + key + " with data: " + hasharray[hashindex].data);
+                return hasharray[hashindex];
+            }
+            hashindex = (hashindex + 1) % size;
+            if (hashindex == startIndex) {
+                break;
+            }
+        }
+        System.out.println("Key " + key + " not found.");
+        return null;
     }
 
     static Dataitem deleteitem(int key) {
@@ -74,6 +82,7 @@ public class HashTable {
             hashindex = (hashindex + 1) % size;
             if (hashindex == startIndex) break;
         }
+        System.out.println("Cannot delete. Key " + key + " not found.");
         return null;
     }
 
@@ -90,19 +99,27 @@ public class HashTable {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        initialise(sc);
+        initialise(7);
 
-        int n = readPositiveInt(sc, "Enter the number of Insertions: ");
+        System.out.println("---- Insert Flow ----");
+        insert(1, 100);
+        insert(8, 800);
+        insert(15, 1500);
 
-        for (int i = 0; i < n; i++) {
-            int key = readInt(sc, "Enter the key: ");
-            int element = readInt(sc, "Enter the element: ");
-            insert(key, element);
-        }
+        System.out.println("\n---- Update Flow (same key insert) ----");
+        insert(8, 8800);
+        search(8);
 
-        System.out.println("Insertion done!");
+        System.out.println("\n---- Search Flow ----");
+        search(15);
+        search(99);
+
+        System.out.println("\n---- Delete Flow ----");
+        deleteitem(1);
+        deleteitem(1);
+        search(1);
+
+        System.out.println("\n---- Final Hash Table ----");
         display();
-        sc.close();
     }
 }

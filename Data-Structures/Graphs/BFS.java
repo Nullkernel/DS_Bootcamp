@@ -9,22 +9,27 @@ public class BFS {
 
     static ArrayList<Integer> bfs(ArrayList<ArrayList<Integer>> adj) {
         int v = adj.size();
+        // BFS forest traversal: iterate vertices in index order so disconnected
+        // components are also visited in a deterministic output order.
         boolean[] visited = new boolean[v];
         ArrayList<Integer> res = new ArrayList<>();
-        Queue<Integer> q = new LinkedList<>();
+        
+        for (int s = 0; s < v; s++) {
+            if (!visited[s]) {
+                Queue<Integer> q = new LinkedList<>();
+                visited[s] = true;
+                q.add(s);
 
-        int src = 0;
-        visited[src] = true;
-        q.add(src);
+                while (!q.isEmpty()) {
+                    int curr = q.poll();
+                    res.add(curr);
 
-        while (!q.isEmpty()) {
-            int curr = q.poll();
-            res.add(curr);
-
-            for (int x : adj.get(curr)) {
-                if (!visited[x]) {
-                    visited[x] = true;
-                    q.add(x);
+                    for (int x : adj.get(curr)) {
+                        if (!visited[x]) {
+                            visited[x] = true;
+                            q.add(x);
+                        }
+                    }
                 }
             }
         }

@@ -1,7 +1,24 @@
 public class AdjacencyMatrix {
+    private static void validateVertex(int[][] mat, int vertex, String name) {
+        if (vertex < 0 || vertex >= mat.length) {
+            throw new IllegalArgumentException(
+                name + " index out of bounds: " + vertex + ". Valid range is 0 to " + (mat.length - 1)
+            );
+        }
+    }
+
     public static void addEdge(int[][] mat, int i, int j) {
+        validateVertex(mat, i, "Source vertex");
+        validateVertex(mat, j, "Destination vertex");
         mat[i][j] = 1;
         mat[j][i] = 1; // for undirected graph
+    }
+
+    public static void removeEdge(int[][] mat, int i, int j) {
+        validateVertex(mat, i, "Source vertex");
+        validateVertex(mat, j, "Destination vertex");
+        mat[i][j] = 0;
+        mat[j][i] = 0; // for undirected graph
     }
 
     public static void displayMatrix(int[][] mat) {
@@ -22,7 +39,13 @@ public class AdjacencyMatrix {
         addEdge(mat, 1, 2);
         addEdge(mat, 2, 3);
 
-        System.out.println("Adjacency Matrix Representation:");
+        System.out.println("Adjacency Matrix after adding edges:");
+        displayMatrix(mat);
+
+        removeEdge(mat, 1, 2);
+        removeEdge(mat, 2, 3);
+
+        System.out.println("Adjacency Matrix after removing edges (1,2) and (2,3):");
         displayMatrix(mat);
     }
 }

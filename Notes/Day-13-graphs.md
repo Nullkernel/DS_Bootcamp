@@ -19,7 +19,7 @@
     - Pros: **`O(V+E)`** memory and efficient to iterate neighbors - good for sparse graphs.
     - Cons: Checking existence of a specific edge may be slower than with a matrix.
 ## Breadth-First Search (BFS):
-BFS traverses a graph level by level (breadth-first). It explores all vertices at distance kkk from the start before vertices at distance **`k+1`**. BFS uses a **queue** to manage the frontier of vertices to visit.
+BFS traverses a graph level by level (breadth-first). It explores all vertices at distance **`k`** from the start before vertices at distance **`k+1`**. BFS uses a **queue** to manage the frontier of vertices to visit.
 ### When to use BFS:
 - Find the shortest path (fewest edges) in an unweighted graph.
 - Test connectivity (reachability) from a source.

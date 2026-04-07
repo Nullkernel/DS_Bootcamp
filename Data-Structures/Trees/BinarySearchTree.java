@@ -1,15 +1,17 @@
 import java.util.*;
 
 public class BinarySearchTree {
-    static class Node {
-        int data;
-        Node left, right;
-        Node (int d) {
-            data = d;
-            left = right = null;
-        }
-    }
     static class BST {
+        private static class Node {
+            int data;
+            Node left, right;
+
+            Node(int d) {
+                data = d;
+                left = right = null;
+            }
+        }
+
         Node root;
         int size;
         BST() {root = null; size = 0;}

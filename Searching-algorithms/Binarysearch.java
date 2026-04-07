@@ -52,7 +52,8 @@ public class Binarysearch {
         int low = 0; 
         int high = arr.length - 1;
         while (low <= high) {
-            int mid = (low + high) / 2;
+            // Safer midpoint formula avoids integer overflow when low + high exceeds int range.
+            int mid = low + (high - low) / 2;
             if (arr[mid] == key)
                 return mid;
             else if (key < arr[mid])

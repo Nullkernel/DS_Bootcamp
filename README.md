@@ -8,30 +8,31 @@ The implementations prioritize simplicity and correctness over heavy optimizatio
 The repository is organized into folders based on topic for better navigation and clarity.
 ## Data-Structures:
 **This directory contains implementations of fundamental data structures in Java, including:**
-- Linked Lists:
-  - Singly Linked Lists.
-  - Circular Linked Lists.
-- Stacks :
-  - Linear Stack. 
-- Queues :
-  - Linear Queue.
-  - Circular Queue. 
-- Trees : 
-  - Binary Tree.
-  - Binary Search Tree.
-  - AVL Tree.
-  - Tries:
-      - Suffix Trie
-      - Suffix Array
-      - Prefix Trie
-      - Prefix Array
-- Graphs :
-  - Adjacency Matrix.
-  - Adjacency List.
-  - BFS algorithm.
-  - DFS algorithm.
-  - Dijkstra's algorithm.
--  Hashtable
+
+- `Data-Structures/Linked-Lists/LinkedList.java` — Singly Linked List.
+- `Data-Structures/Linked-Lists/CircularLinkedLists.java` — Circular Linked List.
+- `Data-Structures/Linked-Lists/DoubleLinkedList.java` — Doubly Linked List.
+- `Data-Structures/Stack/Stack.java` — Linear Stack.
+- `Data-Structures/Queue/Queue.java` — Linear Queue.
+- `Data-Structures/Queue/CircularQueue.java` — Circular Queue.
+- `Data-Structures/Queue/BoundedQueue.java` — Bounded Queue.
+- `Data-Structures/Queue/PriorityQueue.java` — Priority Queue.
+- `Data-Structures/Trees/BinaryTree.java` — Binary Tree (manual traversal demo).
+- `Data-Structures/Trees/BinaryTreeImplementation.java` — Binary Tree with insert/search/delete.
+- `Data-Structures/Trees/BinarySearchTree.java` — Binary Search Tree.
+- `Data-Structures/Trees/AVLTree.java` — AVL Tree.
+- `Data-Structures/Graphs/AdjacencyMatrix.java` — Graph (Adjacency Matrix).
+- `Data-Structures/Graphs/AdjacencyList.java` — Graph (Adjacency List).
+- `Data-Structures/Graphs/BFS.java` — Breadth-First Search (BFS).
+- `Data-Structures/Graphs/DFS.java` — Depth-First Search (DFS).
+- `Data-Structures/Graphs/Dijkstra.java` — Dijkstra's algorithm.
+- `Data-Structures/Hashing/HashTable.java` — Hash Table.
+
+### Additional/Optional Implementations
+- `Data-Structures/Trees/Trie/Trie.java` — Trie.
+- `Data-Structures/Trees/Trie/PrefixTrie.java` — Prefix Trie.
+- `Data-Structures/Trees/Trie/SuffixTrie.java` — Suffix Trie.
+
 
 ## Searching-algorithms:
 **This directory includes Java implementations of common searching techniques:**

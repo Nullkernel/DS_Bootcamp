@@ -1,37 +1,48 @@
-class Node {
-    int data;
-    Node left;
-    Node right;
+// Manual tree traversal demo:
+// This example builds a tree by wiring nodes manually and prints DFS traversals.
+class ManualTraversalTree {
+    private static class TraversalNode {
+        int data;
+        TraversalNode left;
+        TraversalNode right;
 
-    public Node(int key) {
-        data = key;
-        left = right = null;
-    }
-}
-
-class BinaryTreeStructure {
-    Node root = null;
-
-    void inorder_traversal(Node node) {
-        if (node != null) {
-            inorder_traversal(node.left);
-            System.out.print(node.data + " ");
-            inorder_traversal(node.right);
+        TraversalNode(int key) {
+            data = key;
+            left = right = null;
         }
     }
 
-    void pre_order_traversal(Node node) {
+    TraversalNode root = null;
+
+    void buildSampleTree() {
+        root = new TraversalNode(27);
+        root.left = new TraversalNode(12);
+        root.right = new TraversalNode(3);
+        root.left.left = new TraversalNode(44);
+        root.left.right = new TraversalNode(17);
+        root.right.left = new TraversalNode(56);
+    }
+
+    void inorderTraversal(TraversalNode node) {
         if (node != null) {
+            inorderTraversal(node.left);
             System.out.print(node.data + " ");
-            pre_order_traversal(node.left);
-            pre_order_traversal(node.right);
+            inorderTraversal(node.right);
         }
     }
 
-    void post_order_traversal(Node node) {
+    void preOrderTraversal(TraversalNode node) {
         if (node != null) {
-            post_order_traversal(node.left);
-            post_order_traversal(node.right);
+            System.out.print(node.data + " ");
+            preOrderTraversal(node.left);
+            preOrderTraversal(node.right);
+        }
+    }
+
+    void postOrderTraversal(TraversalNode node) {
+        if (node != null) {
+            postOrderTraversal(node.left);
+            postOrderTraversal(node.right);
             System.out.print(node.data + " ");
         }
     }
@@ -39,21 +50,18 @@ class BinaryTreeStructure {
 
 public class BinaryTree {
     public static void main(String[] args) {
-        BinaryTreeStructure tree = new BinaryTreeStructure();
-        tree.root = new Node(27);
-        tree.root.left = new Node(12);
-        tree.root.right = new Node(3);
-        tree.root.left.left = new Node(44);
-        tree.root.left.right = new Node(17);
-        tree.root.right.left = new Node(56);
+        ManualTraversalTree tree = new ManualTraversalTree();
+
+        // Manually building a sample tree for traversal demonstration.
+        tree.buildSampleTree();
 
         System.out.println("Inorder traversal:");
-        tree.inorder_traversal(tree.root);
+        tree.inorderTraversal(tree.root);
 
         System.out.println("\nPreorder traversal:");
-        tree.pre_order_traversal(tree.root);
+        tree.preOrderTraversal(tree.root);
 
         System.out.println("\nPostorder traversal:");
-        tree.post_order_traversal(tree.root);
+        tree.postOrderTraversal(tree.root);
     }
 }

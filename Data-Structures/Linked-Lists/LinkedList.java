@@ -1,14 +1,15 @@
 import java.util.Scanner;
-
-class Node {
-    int data;
-    Node next;
-    Node(int data) {
-        this.data = data;
-        this.next = null;
-    }
-}
 class SinglyLinkedList {
+    private static class Node {
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
     private Node head;
     // ---- Insert At Beginning ----
     public void insertAtBeginning(int data) {
@@ -99,6 +100,30 @@ class SinglyLinkedList {
         }
         temp.next = temp.next.next;
     }
+    // ---- Delete By Value ----
+    public void deleteByValue(int key) {
+        if (head == null) {
+            System.out.println("List is Empty!");
+            return;
+        }
+        if (head.data == key) {
+            head = head.next;
+            System.out.println("Deleted element: " + key);
+            return;
+        }
+        Node prev = head;
+        Node curr = head.next;
+        while (curr != null) {
+            if (curr.data == key) {
+                prev.next = curr.next;
+                System.out.println("Deleted element: " + key);
+                return;
+            }
+            prev = curr;
+            curr = curr.next;
+        }
+        System.out.println("Element " + key + " not found. No deletion performed.");
+    }
     public void search(int key) {
         Node temp = head;
         int position = 1;
@@ -138,9 +163,10 @@ public class LinkedList {
             System.out.println("4. Delete from Beginning");
             System.out.println("5. Delete from End");
             System.out.println("6. Delete from Position");
-            System.out.println("7. Search");
-            System.out.println("8. Display");
-            System.out.println("9. Exit");
+            System.out.println("7. Delete by Value");
+            System.out.println("8. Search");
+            System.out.println("9. Display");
+            System.out.println("10. Exit");
             System.out.print("Enter your choice: ");
             choice = sc.nextInt();
             switch (choice) {
@@ -173,20 +199,25 @@ public class LinkedList {
                     list.deleteFromPosition(position);
                     break;
                 case 7:
+                    System.out.print("Enter element value to Delete: ");
+                    data = sc.nextInt();
+                    list.deleteByValue(data);
+                    break;
+                case 8:
                     System.out.print("Enter element to Search: ");
                     data = sc.nextInt();
                     list.search(data);
                     break;
-                case 8:
+                case 9:
                     list.display();
                     break;
-                case 9:
+                case 10:
                     System.out.println("Exiting...");
                     break;
                 default:
                     System.out.println("Invalid choice!");
             }
-        } while (choice != 9);
+        } while (choice != 10);
         sc.close();
     }
 }

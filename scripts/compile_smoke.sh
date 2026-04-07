@@ -22,9 +22,47 @@ fi
 tmp_dir="$(mktemp -d)"
 trap 'rm -rf "$tmp_dir"' EXIT
 
-failures=0
+combined_out_dir="$tmp_dir/combined_out"
+combined_err_file="$tmp_dir/combined.err"
+mkdir -p "$combined_out_dir"
 
-echo "Compiling ${#java_files[@]} Java file(s) with isolated output folders..."
+echo "Phase 1/2: Compiling ${#java_files[@]} Java file(s) together into one output folder..."
+
+conflict_failures=0
+if javac -d "$combined_out_dir" "${java_files[@]}" > /dev/null 2>"$combined_err_file"; then
+  echo "[PASS] Combined compilation"
+else
+  echo "[FAIL] Combined compilation"
+
+  conflict_log="$tmp_dir/combined.conflicts"
+  other_log="$tmp_dir/combined.other"
+  : >"$conflict_log"
+  : >"$other_log"
+
+  while IFS= read -r line; do
+    if [[ "$line" =~ duplicate[[:space:]]+class ]] || [[ "$line" =~ package[[:space:]].*[[:space:]]clashes[[:space:]]with ]] || [[ "$line" =~ class[[:space:]].*[[:space:]]is[[:space:]]already[[:space:]]defined ]]; then
+      printf '%s\n' "$line" >>"$conflict_log"
+    else
+      printf '%s\n' "$line" >>"$other_log"
+    fi
+  done <"$combined_err_file"
+
+  if [[ -s "$conflict_log" ]]; then
+    conflict_failures=1
+    echo "  Package/class-name conflict diagnostics:"
+    sed 's/^/    /' "$conflict_log"
+  fi
+
+  if [[ -s "$other_log" ]]; then
+    echo "  Non-conflict diagnostics from combined compilation:"
+    sed 's/^/    /' "$other_log"
+  fi
+fi
+
+isolated_failures=0
+
+echo
+echo "Phase 2/2: Compiling with isolated output folders for localized diagnostics..."
 
 for i in "${!java_files[@]}"; do
   file="${java_files[$i]}"
@@ -43,13 +81,18 @@ for i in "${!java_files[@]}"; do
   else
     echo "[FAIL] $file"
     sed 's/^/  /' "$err_file"
-    failures=$((failures + 1))
+    isolated_failures=$((isolated_failures + 1))
   fi
 done
 
-if [[ $failures -gt 0 ]]; then
+if [[ $conflict_failures -gt 0 || $isolated_failures -gt 0 ]]; then
   echo
-  echo "Java compile smoke test failed: $failures file(s) did not compile."
+  if [[ $conflict_failures -gt 0 ]]; then
+    echo "Java compile smoke test detected package/class-name conflicts in combined compilation."
+  fi
+  if [[ $isolated_failures -gt 0 ]]; then
+    echo "Java compile smoke test failed: $isolated_failures file(s) did not compile in isolated mode."
+  fi
   exit 1
 fi
 

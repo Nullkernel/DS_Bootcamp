@@ -1,19 +1,18 @@
 import java.util.*;
 
 public class AVLTree {
-
-    static class Node {
-        int data;
-        int height;
-        Node left, right;
-
-        Node(int data) {
-            this.data = data;
-            this.height = 1;
-        }
-    }
-
     static class AVL {
+        private static class Node {
+            int data;
+            int height;
+            Node left, right;
+
+            Node(int data) {
+                this.data = data;
+                this.height = 1;
+            }
+        }
+
         Node root;
 
         // -------- UTILITIES --------

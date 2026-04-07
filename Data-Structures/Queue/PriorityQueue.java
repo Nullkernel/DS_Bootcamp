@@ -86,7 +86,8 @@ public class PriorityQueue {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         MaxHeapPriorityQueue pq = new MaxHeapPriorityQueue(100);
-        while (true) {
+        boolean running = true;
+        while (running) {
             System.out.println("\n--- Priority Queue Menu ---");
             System.out.println("1. Insert");
             System.out.println("2. Delete (Highest Priority)");
@@ -109,10 +110,12 @@ public class PriorityQueue {
                     pq.display();
                     break;
                 case 4:
-                    System.exit(0);
+                    running = false;
+                    break;
                 default:
                     System.out.println("Invalid choice!");
             }
         }
+        sc.close();
     }
 }

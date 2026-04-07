@@ -1,18 +1,18 @@
 import java.util.Scanner;
 
-class Node {
-    int data;
-    Node prev;
-    Node next;
-
-    Node(int data) {
-        this.data = data;
-        this.prev = null;
-        this.next = null;
-    }
-}
-
 class DoublyLinkedList {
+    private static class Node {
+        int data;
+        Node prev;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+            this.prev = null;
+            this.next = null;
+        }
+    }
+
     private Node head;
 
     public void insertAtBeginning(int data) {
