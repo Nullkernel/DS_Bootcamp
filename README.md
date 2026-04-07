@@ -10,8 +10,8 @@ The repository is organized into folders based on topic for better navigation an
 **This directory contains implementations of fundamental data structures in Java, including:**
 
 - Graphs:
-    - Graph (Adjacency List).
-    - Graph (Adjacency Matrix).
+    
+    
     - Breadth-First Search (BFS).
     - Depth-First Search (DFS).
     - Dijkstra's algorithm.
