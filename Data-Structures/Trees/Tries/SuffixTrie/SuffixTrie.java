@@ -1,4 +1,5 @@
 import java.util.*;
+
 class SuffixNode {
     SuffixNode[] children = new SuffixNode[26];
     boolean isEnd;
@@ -44,7 +45,7 @@ public class SuffixTrie {
         System.out.print("Enter a string: ");
         String text = sc.nextLine();
         trie.buildSuffixTrie(text);
-        System.out.print("Enter substring to search: ");
+        System.out.print("Enter substring to Search: ");
         String pattern = sc.nextLine();
         System.out.println("Substring exists: " + trie.search(pattern));
     }
